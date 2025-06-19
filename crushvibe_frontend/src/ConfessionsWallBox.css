@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Baloo+2:wght@600&display=swap');
+
+.confessions-wall-box.dreamy-confession-card {
+  position: relative;
+  background: linear-gradient(131deg, #fffbe1 60%, #ffe4e1 99%, #ffe5ef 100%);
+  border-radius: 2.1rem;
+  box-shadow: 0 6px 37px 0 #ffe4e15a, 0 2px 10px 0 #ffd1dc46;
+  padding: 35px 20px 25px 20px;
+  margin-bottom: 30px;
+  margin-top: 0;
+  border: 1.3px solid #ffd1dc;
+  min-width: 275px;
+  max-width: 452px;
+  z-index: 2;
+  overflow: visible;
+}
+
+.confessions-wall-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 18px;
+  justify-content: flex-start;
+}
+
+.confessions-wall-title {
+  font-family: "Pacifico", "Baloo 2", cursive, sans-serif;
+  font-size: 1.36rem;
+  color: #e06db1;
+  text-shadow: 0 2px 9px #ffe4e180, .5px .5px #ffd1dc27;
+  font-weight: 700;
+  letter-spacing: .02em;
+  margin-left: 7px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+.confessions-wall-rose {
+  font-size: 1.38em;
+  opacity: .75;
+  filter: blur(0.1px) drop-shadow(0 1px 7px #ffd1dc86);
+  margin-left: 10px;
+}
+
+.confessions-wall-form {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 4;
+}
+
+.confession-input {
+  flex: 1;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-family: "Segoe UI", "Baloo 2", cursive, sans-serif;
+  border: 1.6px solid #ffd1dc;
+  padding: 13px 16px;
+  background: #fffefde7;
+  color: #ca86af;
+  outline: none;
+  min-width: 0;
+  box-shadow: 0 1.6px 7px #ffd1dc16;
+  transition: border .18s, background .16s, box-shadow .17s;
+  margin-right: 2px;
+}
+
+.confession-input:focus {
+  border-color: #e06db1;
+  background: #fff7fa;
+  box-shadow: 0 1.6px 17px #ffd1dc51;
+}
+
+.confession-post-btn {
+  background: linear-gradient(91deg, #ffd1dc 62%, #ffe4e1 100%);
+  color: #e06db1;
+  border: none;
+  border-radius: 2em;
+  padding: 10px 21px 10px 17px;
+  font-family: 'Pacifico', cursive, 'Segoe UI', Arial, sans-serif;
+  font-size: 1.03rem;
+  font-weight: 700;
+  box-shadow: 0 2px 10px #ffd1dc23;
+  cursor: pointer;
+  transition: background 0.17s, color 0.13s, box-shadow .15s, transform .11s;
+  margin-left: 4px;
+}
+
+.confession-post-btn:active,
+.confession-post-btn:focus {
+  background: #ffe4e1;
+  color: #ca86af;
+  box-shadow: 0 3px 14px #e0bbe414, 0 0 8px #ffd1dc33;
+  outline: none;
+  transform: scale(0.96);
+}
+.confession-post-btn[disabled] {
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+/* Scrollable area for confessions */
+.confessions-list-outer {
+  margin-top: 10px;
+  width: 100%;
+  min-height: 123px;
+  max-height: 220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: none;
+  border-radius: 1.6em;
+  padding-right: 0px;
+  scrollbar-width: thin;
+  scrollbar-color: #ffd1dc #fffbe1;
+  box-shadow: none;
+  outline: none;
+  position: relative;
+  z-index: 3;
+}
+
+.confessions-list-outer::-webkit-scrollbar {
+  width: 9px;
+  background: #fff7ede8;
+  border-radius: 7px;
+}
+
+.confessions-list-outer::-webkit-scrollbar-thumb {
+  background: #ffd1dcbb;
+  border-radius: 12px;
+  min-height: 22px;
+}
+
+.confession-bubble {
+  position: relative;
+  min-height: 47px;
+  background: #fffbe1e4;
+  border-radius: 2em 2.2em 2.1em 1.45em / 2.1em 1.9em 2.67em 1.22em;
+  box-shadow: 0 1.4px 12px #ffd1dc2a, 0 4px 16px #ffd1dc15;
+  padding: 17px 18px 14px 24px;
+  font-size: 1.13rem;
+  font-family: "Baloo 2", cursive, sans-serif;
+  color: #ca86af;
+  margin-bottom: 13px;
+  margin-top: 6px;
+  word-break: break-word;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: confession-float-up 0.85s cubic-bezier(.30,1,.67,1.4);
+  opacity: 1;
+  z-index: 2;
+  overflow: visible;
+}
+.confession-bubble.confession-bubble-right {
+  margin-left: 32px;
+}
+.confession-bubble-pop {
+  animation: bubble-pop .49s cubic-bezier(.53,1,.72,1.49), confession-float-up 0.82s cubic-bezier(.32,1.1,.82,1.11);
+  z-index: 5;
+}
+@keyframes confession-float-up {
+  0%   { opacity: 0; transform: translateY(32px) scale(0.99);}
+  52%  { opacity: 1; transform: translateY(-11px) scale(1.11);}
+  100% { opacity: 1; transform: translateY(0) scale(1);}
+}
+@keyframes bubble-pop {
+  0%   { transform: scale(0.92) rotate(-6deg);}
+  48%  { transform: scale(1.17) rotate(5deg);}
+  82%  { transform: scale(0.98) rotate(-1deg);}
+  100% { transform: scale(1) rotate(0);}
+}
+
+.confession-bubble::after {
+  content: "";
+  position: absolute;
+  left: 27px;
+  top: 100%;
+  width: 29px;
+  height: 15px;
+  background: linear-gradient(125deg,#fffbe1cc 88%,#ffe4e134 100%);
+  border-bottom-right-radius: 16px 8px;
+  transform: skewY(8deg) scaleX(0.7);
+  opacity: .63;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.confession-bubble-heart {
+  font-size: 1.12em;
+  margin-right: 6px;
+  user-select: none;
+  opacity: .69;
+  filter: blur(0.09px) drop-shadow(0 0.5px 3px #ffd1dc84);
+  flex-shrink: 0;
+}
+.confession-msg {
+  color: #a76fb9;
+  font-weight: 600;
+  font-size: 1.09rem;
+  letter-spacing: -.01em;
+  line-height: 1.27;
+  font-family: "Baloo 2", cursive, sans-serif;
+}
+
+/* Empty state */
+.confession-empty {
+  color: #ebc3da;
+  font-style: italic;
+  opacity: .82;
+  background: #fffbe1e6;
+  justify-content: center;
+}
+
+/* Faded roses background, layered and subtle */
+.confessions-wall-roses-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 99%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+  opacity: 0.90;
+  mix-blend-mode: lighten;
+}
+.confessions-wall-roses-svg {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 140px;
+  height: 70px;
+  z-index: 0;
+  opacity: .40;
+  pointer-events: none;
+}
+
+/* Responsive styles */
+@media (max-width: 530px) {
+  .confessions-wall-box.dreamy-confession-card {
+    min-width: 92vw;
+    max-width: 99vw;
+    padding: 15px 2vw 9px 2vw;
+  }
+  .confessions-list-outer {
+    min-height: 66px;
+    max-height: 150px;
+    font-size: 0.97rem;
+  }
+}

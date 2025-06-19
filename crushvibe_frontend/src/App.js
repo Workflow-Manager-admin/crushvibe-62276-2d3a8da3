@@ -13,6 +13,8 @@ import SpinTheHeartBox from "./SpinTheHeartBox";
 import "./SpinTheHeartBox.css";
 import PickupLinesBox from "./PickupLinesBox";
 import LovePollBox from "./LovePollBox";
+import ConfessionsWallBox from "./ConfessionsWallBox";
+import "./ConfessionsWallBox.css";
 
 // PUBLIC_INTERFACE
 function App() {
@@ -266,6 +268,8 @@ function App() {
             <PickupLinesBox />
             {/* Love Poll Box: below Pickup Lines */}
             <LovePollBox />
+            {/* Confessions Wall Box: below Love Poll */}
+            <ConfessionsWallBox />
           </div>
         </div>
       </main>
