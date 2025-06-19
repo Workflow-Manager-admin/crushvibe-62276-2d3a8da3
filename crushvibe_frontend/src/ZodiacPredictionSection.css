@@ -2,12 +2,12 @@
 
 .zodiac-box.dreamy-zodiac-box {
   background: linear-gradient(135deg, #e0bbe4 14%, #ffd1dc 82%, #fffde1 100%);
-  border-radius: 1.35rem;
-  box-shadow: 0 5px 24px 0 #e0bbe471, 0 0 32px 2px #ffd1dc36;
-  padding: 20px 18px 17px 18px;
-  margin-bottom: 28px;
-  min-height: 210px;
-  border: 1.2px solid #e0bbe4;
+  border-radius: 2rem;
+  box-shadow: 0 9px 38px 0 #e0bbe478, 0 0 46px 6px #ffd1dc38;
+  padding: 33px 28px 26px 28px;
+  margin-bottom: 38px;
+  min-height: 272px;
+  border: 1.6px solid #e0bbe4;
   position: relative;
   z-index: 3;
   overflow: visible;

@@ -2,12 +2,12 @@
 
 .spin-heart-box.dreamy-spin-box {
   background: linear-gradient(133deg, #ffe4e1 60%, #e0bbe4 100%);
-  border-radius: 1.32rem;
-  box-shadow: 0 5px 40px 0 #ffd1dc77, 0 0 26px 2px #e0bbe469;
-  padding: 24px 16px 16px 16px;
-  margin-bottom: 28px;
-  min-height: 247px;
-  border: 1.2px solid #ffd1dc;
+  border-radius: 2.15rem;
+  box-shadow: 0 10px 55px 0 #ffd1dc90, 0 0 38px 6px #e0bbe469;
+  padding: 42px 32px 27px 32px;
+  margin-bottom: 38px;
+  min-height: 320px;
+  border: 1.7px solid #ffd1dc;
   position: relative;
   z-index: 3;
 }
@@ -30,14 +30,15 @@
   position: relative;
 }
 .heart-spinner {
-  width: 154px;
-  min-width: 154px;
-  height: 154px;
-  min-height: 154px;
+  width: 202px;
+  min-width: 202px;
+  height: 202px;
+  min-height: 202px;
   border-radius: 54%;
   background: linear-gradient(135deg, #ffe4e186, #e0bbe433 88%);
-  box-shadow: 0 2px 16px #ffd1dc99, 0 0 44px #e0bbe488;
+  box-shadow: 0 2px 18px #ffd1dca8, 0 0 56px #e0bbe488;
   margin: 0 auto;
+  margin-bottom: 8px;
   position: relative;
   overflow: visible;
   will-change: transform;
