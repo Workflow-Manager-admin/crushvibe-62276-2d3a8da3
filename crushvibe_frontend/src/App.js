@@ -118,46 +118,125 @@ function App() {
           <div className="lovechamber-compat-col">
             <div className="main-box centered-mainbox">
               <div className="hero" style={{
-                paddingTop: "35px",
-                maxWidth: "95%",
+                paddingTop: "22px",
+                maxWidth: "98%",
                 margin: "0 auto",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center"
               }}>
+                {/* Decorative heading for compatibility box */}
                 <div
-                  className="subtitle"
+                  className="compatibility-title-wrap"
                   style={{
-                    marginBottom: 16,
-                    marginTop: 8,
-                    fontSize: "1.16rem",
-                    color: "#ca86af",
-                    fontFamily: "'Segoe UI', 'Helvetica Neue', Arial, sans-serif",
-                    opacity: 0.91,
-                    fontWeight: 500,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "13px",
+                    justifyContent: "center",
+                    width: "100%",
+                    marginBottom: "11px",
+                    marginTop: "0"
+                  }}
+                >
+                  <span
+                    className="compatibility-title"
+                    style={{
+                      fontFamily: "'Pacifico', 'Baloo 2', cursive, sans-serif",
+                      fontSize: "1.44rem",
+                      color: "#e06db1",
+                      textShadow: "0 2px 10px #ffe4e18d, 0.5px 0.5px #ffd1dc55",
+                      fontWeight: 700,
+                      letterSpacing: ".03em",
+                      marginLeft: "6px",
+                      marginRight: "2px",
+                      display: "flex",
+                      alignItems: "center",
+                      userSelect: "none"
+                    }}
+                  >
+                    <span
+                      role="img"
+                      aria-label="heart"
+                      style={{
+                        fontSize: 27,
+                        marginRight: 9,
+                        filter: "drop-shadow(0 1.2px 8px #ffd1dc66)",
+                        opacity: .88,
+                        verticalAlign: "middle"
+                      }}
+                    >
+                      💖
+                    </span>
+                    <span
+                      style={{
+                        display: "inline",
+                        fontFamily: "'Pacifico', 'Baloo 2', cursive, sans-serif"
+                      }}
+                    >
+                      Compatibility Match
+                    </span>
+                  </span>
+                  <span
+                    className="compatibility-title-sticker"
+                    aria-hidden="true"
+                    style={{
+                      fontSize: 21,
+                      marginLeft: 7,
+                      filter: "drop-shadow(0 0.5px 8px #e0bbe499)",
+                      opacity: 0.80
+                    }}
+                  >✨</span>
+                </div>
+                <div
+                  className="compatibility-prompt"
+                  style={{
+                    marginBottom: 19,
+                    marginTop: -4,
+                    fontSize: "1.07rem",
+                    color: "#a76fb9",
+                    fontFamily: "'Baloo 2', 'Segoe UI', cursive, sans-serif",
+                    opacity: 0.98,
+                    fontWeight: 600,
+                    background: "#fff4fa77",
                     textAlign: "center",
+                    borderRadius: "18px",
+                    padding: "7.5px 18px 7px 18px",
+                    maxWidth: "420px",
+                    width: "100%",
+                    boxShadow: "0 2px 9px #ffe4e141"
                   }}
                 >
                   Enter your name and your crush’s name to unveil your playful fate and get a flirty line!
                 </div>
                 <form
-                  style={{ width: "94%", display: "flex", flexDirection: "column", gap: 18, alignItems: "center" }}
+                  style={{
+                    width: "100%",
+                    maxWidth: "410px",
+                    minWidth: "240px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 15,
+                    alignItems: "center",
+                    margin: "0 auto",
+                  }}
                   onSubmit={e => { e.preventDefault(); handleGenerate(); }}
                   autoComplete="off"
                 >
                   <input
                     className="container"
                     style={{
-                      padding: '13px 19px',
-                      borderRadius: 12,
+                      padding: '13px 17px',
+                      borderRadius: 13,
                       border: '1.5px solid #e0bbe4',
-                      fontSize: 18,
-                      fontFamily: "'Segoe UI', 'Roboto', Arial, sans-serif",
-                      background: 'rgba(255,255,255,0.13)',
+                      fontSize: "1.12rem",
+                      fontFamily: "'Baloo 2','Segoe UI', 'Roboto', Arial, sans-serif",
+                      background: 'rgba(255,255,255,0.16)',
                       color: '#aa70a9',
                       outline: "none",
                       marginBottom: -1,
                       width: "100%",
+                      boxShadow: "0 1.2px 9px #ffd1dc26",
+                      transition: "box-shadow 0.18s, border 0.15s"
                     }}
                     name="yourName"
                     placeholder="Your Name"
@@ -170,15 +249,16 @@ function App() {
                   <input
                     className="container"
                     style={{
-                      padding: '13px 19px',
-                      borderRadius: 12,
+                      padding: '13px 17px',
+                      borderRadius: 13,
                       border: '1.5px solid #e0bbe4',
-                      fontSize: 18,
-                      fontFamily: "'Segoe UI', 'Roboto', Arial, sans-serif",
-                      background: 'rgba(255,255,255,0.14)',
+                      fontSize: "1.12rem",
+                      fontFamily: "'Baloo 2', 'Segoe UI', 'Roboto', Arial, sans-serif",
+                      background: 'rgba(255,255,255,0.17)',
                       color: '#aa70a9',
                       outline: "none",
                       width: "100%",
+                      boxShadow: "0 1.2px 9px #ffd1dc26",
                     }}
                     name="crushName"
                     placeholder="Crush's Name"
@@ -187,19 +267,27 @@ function App() {
                     spellCheck="false"
                     required
                   />
-                  <div style={{ display: 'flex', gap: 14, marginTop: 6, justifyContent: 'center' }}>
+                  <div style={{
+                    display: 'flex',
+                    gap: "11px",
+                    marginTop: "7px",
+                    justifyContent: 'center',
+                    width: "100%",
+                    flexWrap: "wrap"
+                  }}>
                     <button
                       type="submit"
                       className="btn btn-large"
                       style={{
-                        minWidth: 120,
+                        minWidth: 124,
                         fontWeight: 600,
-                        background: "linear-gradient(93deg, #ffe4e1 55%, #ffd1dc 100%)",
+                        background: "linear-gradient(93deg, #ffe4e1 56%, #ffd1dc 100%)",
                         color: "#e06db1",
                         border: "none",
                         borderRadius: 20,
-                        fontSize: "1.16rem",
-                        boxShadow: "0 2px 12px 0 #ffd1dc33"
+                        fontSize: "1.13rem",
+                        boxShadow: "0 2px 12px 0 #ffd1dc44",
+                        padding: "12px 20px"
                       }}
                     >
                       Generate Flirty Line
@@ -210,9 +298,10 @@ function App() {
                       style={{
                         background: "#e0bbe4",
                         color: "#fff",
-                        minWidth: 90,
+                        minWidth: 97,
                         borderRadius: 20,
-                        fontWeight: 500
+                        fontWeight: 500,
+                        fontSize: "1.08rem"
                       }}
                       onClick={handleReset}
                     >
@@ -223,38 +312,44 @@ function App() {
                 {(verdict || flirtyLine) && (
                   <div
                     style={{
-                      marginTop: 32,
-                      width: '95%',
-                      padding: showResult ? '28px 20px 18px' : '18px 20px 10px',
-                      borderRadius: 18,
-                      background: '#ffe4e1ee',
-                      boxShadow: '0 2px 10px 0 #e0bbe44d',
+                      marginTop: "25px",
+                      width: '100%',
+                      maxWidth: "420px",
+                      minWidth: "210px",
+                      padding: showResult ? '22px 20px 15px' : '14px 20px 8px',
+                      borderRadius: "1.6em",
+                      background: 'linear-gradient(132deg,#ffe4e1ee 74%, #ffd1dcbb 100%)',
+                      boxShadow: '0 2px 12px 0 #e0bbe432',
                       textAlign: 'center',
-                      minHeight: 60,
-                      border: "1px solid #ffd1dc"
+                      minHeight: 58,
+                      border: "1.2px solid #ffd1dc",
+                      marginLeft: "auto",
+                      marginRight: "auto"
                     }}
                   >
                     {verdict && (
                       <div style={{
                         fontSize: 20,
-                        fontWeight: 500,
+                        fontWeight: 600,
                         marginBottom: showResult && flirtyLine ? 11 : 0,
                         color: verdict.startsWith('💔') ? '#e06db1' : '#ca86af',
+                        fontFamily: "'Baloo 2', 'Segoe UI', cursive, sans-serif"
                       }}>
                         {verdict}
                       </div>
                     )}
                     {showResult && flirtyLine && (
                       <div style={{
-                        fontSize: 18,
-                        marginTop: 5,
+                        fontSize: "1.07rem",
+                        marginTop: 6,
                         color: '#a76fb9',
-                        opacity: 0.97
+                        opacity: .98
                       }}>
-                        <span style={{ fontWeight: 400 }}>Flirty Line: </span>
+                        <span style={{ fontWeight: 400, fontFamily: "'Segoe UI', 'Baloo 2', cursive, sans-serif" }}>Flirty Line: </span>
                         <span style={{
-                          fontWeight: 600,
-                          color: '#ff77a9'
+                          fontWeight: 700,
+                          color: '#ff77a9',
+                          fontFamily: "'Baloo 2', 'Segoe UI', cursive, sans-serif"
                         }}>
                           {flirtyLine}
                         </span>
