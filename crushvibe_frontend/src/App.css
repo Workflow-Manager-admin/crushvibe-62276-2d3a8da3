@@ -106,6 +106,7 @@ body {
   flex-direction: column;
   gap: 24px; /* slight gap decrease between stacked boxes */
   align-items: stretch;
+  /* Nudge left on wide screens */
   padding-left: 0;
   padding-right: 0;
   margin-top: 0;
@@ -113,6 +114,9 @@ body {
   z-index: 1;
   box-sizing: border-box;
   align-items: center;
+  margin-left: -28px; /* shift left only the column, not inner boxes */
+  /* Subtle desktop-only nudge, overridden responsively */
+  transition: margin 0.25s cubic-bezier(.68,0,.42,1.11);
 }
 
 /* Right column: Compatibility + SpinTheHeart */
@@ -127,6 +131,9 @@ body {
   margin-top: 0;
   margin-bottom: 0;
   box-sizing: border-box;
+  margin-right: -28px; /* shift right only the column, not inner boxes */
+  /* Subtle desktop-only nudge, overridden responsively */
+  transition: margin 0.25s cubic-bezier(.68,0,.42,1.11);
 }
 
 /* Make main-box and SpinTheHeartBox larger */
@@ -265,14 +272,19 @@ body {
     padding-left: 2vw !important;
     padding-right: 2vw !important;
   }
-  .lovechamber-section-col, .lovechamber-compat-col {
+  .lovechamber-section-col,
+  .lovechamber-compat-col {
     min-width: 97vw;
     max-width: 99vw;
     width: 99vw;
     padding-left: 0 !important;
     padding-right: 0 !important;
-    margin: 0 auto;
+    margin: 0 auto !important;
     box-sizing: border-box;
+    /* Undo column nudge on small screens */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    transition: none;
   }
   .compatibility-title {
     font-size: 1.11rem !important;
