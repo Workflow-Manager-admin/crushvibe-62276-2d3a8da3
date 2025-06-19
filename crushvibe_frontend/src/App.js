@@ -166,174 +166,191 @@ function App() {
           <LoveMoodboardSection />
           {/* 2: Zodiac Prediction Section */}
           <ZodiacPredictionSection />
-          {/* 3: Spin the Heart Wheel Game */}
-          <SpinTheHeartBox />
+          {/* SpinTheHeartBox removed from left column */}
         </div>
-        {/* Main box stays centered/right */}
+        {/* Main box stays centered/right, stacking: Header, Main Compatibility, then Spin The Heart */}
         <div
-          className="main-box"
           style={{
-            background: "linear-gradient(135deg, #ffe4e1 0%, #ffd1dc 84%, #e0bbe4 100%)",
-            borderRadius: "2.1rem",
-            boxShadow: "0 7px 36px 0 rgba(224, 187, 228, 0.13)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
             minWidth: 340,
-            maxWidth: 420,
+            maxWidth: 440,
             width: "100%",
-            padding: "0 0 38px 0",
             margin: "0 10px",
-            border: "2px solid #e0bbe4",
-            position: "relative"
+            flex: 1,
+            gap: 0
           }}
         >
-          <main>
-            <div className="hero" style={{
-              paddingTop: "35px",
-              maxWidth: "95%",
-              margin: "0 auto",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center"
-            }}>
-              <div
-                className="subtitle"
-                style={{
-                  marginBottom: 16,
-                  marginTop: 8,
-                  fontSize: "1.16rem",
-                  color: "#ca86af",
-                  fontFamily: "'Segoe UI', 'Helvetica Neue', Arial, sans-serif",
-                  opacity: 0.91,
-                  fontWeight: 500,
-                  textAlign: "center",
-                }}
-              >
-                {/* Tagline */}
-                Enter your name and your crush’s name to unveil your playful fate and get a flirty line!
-              </div>
-              <form
-                style={{ width: "94%", display: "flex", flexDirection: "column", gap: 18, alignItems: "center" }}
-                onSubmit={e => { e.preventDefault(); handleGenerate(); }}
-                autoComplete="off"
-              >
-                <input
-                  className="container"
-                  style={{
-                    padding: '13px 19px',
-                    borderRadius: 12,
-                    border: '1.5px solid #e0bbe4',
-                    fontSize: 18,
-                    fontFamily: "'Segoe UI', 'Roboto', Arial, sans-serif",
-                    background: 'rgba(255,255,255,0.13)',
-                    color: '#aa70a9',
-                    outline: "none",
-                    marginBottom: -1,
-                    width: "100%",
-                  }}
-                  name="yourName"
-                  placeholder="Your Name"
-                  value={yourName}
-                  onChange={handleInputChange}
-                  autoFocus
-                  spellCheck="false"
-                  required
-                />
-                <input
-                  className="container"
-                  style={{
-                    padding: '13px 19px',
-                    borderRadius: 12,
-                    border: '1.5px solid #e0bbe4',
-                    fontSize: 18,
-                    fontFamily: "'Segoe UI', 'Roboto', Arial, sans-serif",
-                    background: 'rgba(255,255,255,0.14)',
-                    color: '#aa70a9',
-                    outline: "none",
-                    width: "100%",
-                  }}
-                  name="crushName"
-                  placeholder="Crush's Name"
-                  value={crushName}
-                  onChange={handleInputChange}
-                  spellCheck="false"
-                  required
-                />
-                <div style={{ display: 'flex', gap: 14, marginTop: 6, justifyContent: 'center' }}>
-                  <button
-                    type="submit"
-                    className="btn btn-large"
-                    style={{
-                      minWidth: 120,
-                      fontWeight: 600,
-                      background: "linear-gradient(93deg, #ffe4e1 55%, #ffd1dc 100%)",
-                      color: "#e06db1",
-                      border: "none",
-                      borderRadius: 20,
-                      fontSize: "1.16rem",
-                      boxShadow: "0 2px 12px 0 #ffd1dc33"
-                    }}
-                  >
-                    Generate Flirty Line
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-large"
-                    style={{
-                      background: "#e0bbe4",
-                      color: "#fff",
-                      minWidth: 90,
-                      borderRadius: 20,
-                      fontWeight: 500
-                    }}
-                    onClick={handleReset}
-                  >
-                    Reset
-                  </button>
-                </div>
-              </form>
-              {(verdict || flirtyLine) && (
+          <div
+            className="main-box"
+            style={{
+              background: "linear-gradient(135deg, #ffe4e1 0%, #ffd1dc 84%, #e0bbe4 100%)",
+              borderRadius: "2.1rem",
+              boxShadow: "0 7px 36px 0 rgba(224, 187, 228, 0.13)",
+              minWidth: 340,
+              maxWidth: 420,
+              width: "100%",
+              padding: "0 0 38px 0",
+              border: "2px solid #e0bbe4",
+              position: "relative",
+              marginBottom: 0
+            }}
+          >
+            <main>
+              <div className="hero" style={{
+                paddingTop: "35px",
+                maxWidth: "95%",
+                margin: "0 auto",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center"
+              }}>
                 <div
+                  className="subtitle"
                   style={{
-                    marginTop: 32,
-                    width: '95%',
-                    padding: showResult ? '28px 20px 18px' : '18px 20px 10px',
-                    borderRadius: 18,
-                    background: '#ffe4e1ee',
-                    boxShadow: '0 2px 10px 0 #e0bbe44d',
-                    textAlign: 'center',
-                    minHeight: 60,
-                    border: "1px solid #ffd1dc"
+                    marginBottom: 16,
+                    marginTop: 8,
+                    fontSize: "1.16rem",
+                    color: "#ca86af",
+                    fontFamily: "'Segoe UI', 'Helvetica Neue', Arial, sans-serif",
+                    opacity: 0.91,
+                    fontWeight: 500,
+                    textAlign: "center",
                   }}
                 >
-                  {verdict && (
-                    <div style={{
-                      fontSize: 20,
-                      fontWeight: 500,
-                      marginBottom: showResult && flirtyLine ? 11 : 0,
-                      color: verdict.startsWith('💔') ? '#e06db1' : '#ca86af',
-                    }}>
-                      {verdict}
-                    </div>
-                  )}
-                  {showResult && flirtyLine && (
-                    <div style={{
-                      fontSize: 18,
-                      marginTop: 5,
-                      color: '#a76fb9',
-                      opacity: 0.97
-                    }}>
-                      <span style={{ fontWeight: 400 }}>Flirty Line: </span>
-                      <span style={{
-                        fontWeight: 600,
-                        color: '#ff77a9'
-                      }}>
-                        {flirtyLine}
-                      </span>
-                    </div>
-                  )}
+                  {/* Tagline */}
+                  Enter your name and your crush’s name to unveil your playful fate and get a flirty line!
                 </div>
-              )}
-            </div>
-          </main>
+                <form
+                  style={{ width: "94%", display: "flex", flexDirection: "column", gap: 18, alignItems: "center" }}
+                  onSubmit={e => { e.preventDefault(); handleGenerate(); }}
+                  autoComplete="off"
+                >
+                  <input
+                    className="container"
+                    style={{
+                      padding: '13px 19px',
+                      borderRadius: 12,
+                      border: '1.5px solid #e0bbe4',
+                      fontSize: 18,
+                      fontFamily: "'Segoe UI', 'Roboto', Arial, sans-serif",
+                      background: 'rgba(255,255,255,0.13)',
+                      color: '#aa70a9',
+                      outline: "none",
+                      marginBottom: -1,
+                      width: "100%",
+                    }}
+                    name="yourName"
+                    placeholder="Your Name"
+                    value={yourName}
+                    onChange={handleInputChange}
+                    autoFocus
+                    spellCheck="false"
+                    required
+                  />
+                  <input
+                    className="container"
+                    style={{
+                      padding: '13px 19px',
+                      borderRadius: 12,
+                      border: '1.5px solid #e0bbe4',
+                      fontSize: 18,
+                      fontFamily: "'Segoe UI', 'Roboto', Arial, sans-serif",
+                      background: 'rgba(255,255,255,0.14)',
+                      color: '#aa70a9',
+                      outline: "none",
+                      width: "100%",
+                    }}
+                    name="crushName"
+                    placeholder="Crush's Name"
+                    value={crushName}
+                    onChange={handleInputChange}
+                    spellCheck="false"
+                    required
+                  />
+                  <div style={{ display: 'flex', gap: 14, marginTop: 6, justifyContent: 'center' }}>
+                    <button
+                      type="submit"
+                      className="btn btn-large"
+                      style={{
+                        minWidth: 120,
+                        fontWeight: 600,
+                        background: "linear-gradient(93deg, #ffe4e1 55%, #ffd1dc 100%)",
+                        color: "#e06db1",
+                        border: "none",
+                        borderRadius: 20,
+                        fontSize: "1.16rem",
+                        boxShadow: "0 2px 12px 0 #ffd1dc33"
+                      }}
+                    >
+                      Generate Flirty Line
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-large"
+                      style={{
+                        background: "#e0bbe4",
+                        color: "#fff",
+                        minWidth: 90,
+                        borderRadius: 20,
+                        fontWeight: 500
+                      }}
+                      onClick={handleReset}
+                    >
+                      Reset
+                    </button>
+                  </div>
+                </form>
+                {(verdict || flirtyLine) && (
+                  <div
+                    style={{
+                      marginTop: 32,
+                      width: '95%',
+                      padding: showResult ? '28px 20px 18px' : '18px 20px 10px',
+                      borderRadius: 18,
+                      background: '#ffe4e1ee',
+                      boxShadow: '0 2px 10px 0 #e0bbe44d',
+                      textAlign: 'center',
+                      minHeight: 60,
+                      border: "1px solid #ffd1dc"
+                    }}
+                  >
+                    {verdict && (
+                      <div style={{
+                        fontSize: 20,
+                        fontWeight: 500,
+                        marginBottom: showResult && flirtyLine ? 11 : 0,
+                        color: verdict.startsWith('💔') ? '#e06db1' : '#ca86af',
+                      }}>
+                        {verdict}
+                      </div>
+                    )}
+                    {showResult && flirtyLine && (
+                      <div style={{
+                        fontSize: 18,
+                        marginTop: 5,
+                        color: '#a76fb9',
+                        opacity: 0.97
+                      }}>
+                        <span style={{ fontWeight: 400 }}>Flirty Line: </span>
+                        <span style={{
+                          fontWeight: 600,
+                          color: '#ff77a9'
+                        }}>
+                          {flirtyLine}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            </main>
+          </div>
+          {/* Now add the SpinTheHeartBox directly below the main-box */}
+          <div style={{ width: "100%", maxWidth: 420, marginTop: 26 }}>
+            <SpinTheHeartBox />
+          </div>
         </div>
       </div>
     </div>
