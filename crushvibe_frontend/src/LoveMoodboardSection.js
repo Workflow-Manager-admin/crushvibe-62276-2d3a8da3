@@ -1,26 +1,49 @@
 import React, { useState } from "react";
 import "./LoveMoodboardSection.css";
 
+/*
+ * List of uploaded user images, moved to the assets folder. 
+ * You must ensure these files are available inside 'assets' directory at build/runtime.
+ */
 // PUBLIC_INTERFACE
 function LoveMoodboardSection() {
   /** Main pastel dreamy moodboard grid for LOVE CHAMBER left column. */
 
-  // Placeholder dreamy pastel image URLs/unsplash/light blob SVGs—use 8 for full grid shuffle effect.
+  // Only use the provided user-uploaded images, stored in public/assets.
   const MOODBOARD_IMAGES = [
-    "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/photo-1465101178521-c1a9136a0408?auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/photo-1424746219973-8fe3bd07d8e3?auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/photo-1544986581-efac024faf62?auto=format&fit=crop&w=400&q=80"
+    "assets/20250619_070641_Screenshot_2025-06-19_122649.png",
+    "assets/20250619_070642_Screenshot_2025-06-19_122700.png",
+    "assets/20250619_070643_Screenshot_2025-06-19_122712.png",
+    "assets/20250619_070644_Screenshot_2025-06-19_122728.png",
+    "assets/20250619_070645_Screenshot_2025-06-19_122852.png",
+    "assets/20250619_070646_Screenshot_2025-06-19_122905.png",
+    "assets/20250619_070646_Screenshot_2025-06-19_122940.png",
+    "assets/20250619_070647_Screenshot_2025-06-19_123046.png",
+    "assets/20250619_070648_Screenshot_2025-06-19_123152.png",
+    "assets/20250619_070648_Screenshot_2025-06-19_123200.png",
+    "assets/20250619_070649_Screenshot_2025-06-19_123230.png",
+    "assets/20250619_070650_Screenshot_2025-06-19_123321.png",
+    "assets/20250619_070650_Screenshot_2025-06-19_123328.png",
+    "assets/20250619_070651_Screenshot_2025-06-19_123343.png",
+    "assets/20250619_070651_Screenshot_2025-06-19_123348.png",
+    "assets/20250619_070652_Screenshot_2025-06-19_123355.png",
+    "assets/20250619_070652_Screenshot_2025-06-19_123515.png",
+    "assets/20250619_070653_Screenshot_2025-06-19_123524.png",
+    "assets/20250619_070653_Screenshot_2025-06-19_123530.png",
+    "assets/20250619_070654_Screenshot_2025-06-19_123538.png",
+    "assets/20250619_070655_Screenshot_2025-06-19_123547.png",
+    "assets/20250619_070655_Screenshot_2025-06-19_123555.png",
+    "assets/20250619_070655_Screenshot_2025-06-19_123607.png",
+    "assets/20250619_070656_Screenshot_2025-06-19_123612.png",
   ];
 
-  const [indices, setIndices] = useState([0, 1, 2, 3, 4, 5, 6, 7]);
+  // Initially, grid order is sequential. 
+  // You can display either all or a fixed number per row/column.
+  const imageCount = MOODBOARD_IMAGES.length;
+  const [indices, setIndices] = useState(Array.from({ length: imageCount }, (_, i) => i));
   const [shuffleAnim, setShuffleAnim] = useState(false);
 
-  // Fisher-Yates shuffle for images
+  // PUBLIC_INTERFACE
   function shuffleMoodboard() {
     const arr = [...indices];
     for (let i = arr.length - 1; i > 0; i--) {
@@ -34,24 +57,48 @@ function LoveMoodboardSection() {
     }, 285);
   }
 
+  // Display all images dynamically in a grid
   return (
     <section className="love-moodboard-box">
       <div className="love-moodboard-title" style={{ fontFamily: "'Pacifico', cursive" }}>
         Love Moodboard
       </div>
-      <div className={`moodboard-grid${shuffleAnim ? " moodboard-grid-animate" : ""}`}>
-        {indices.slice(0, 8).map((imgIdx, i) => (
+      <div
+        className={`moodboard-grid${shuffleAnim ? " moodboard-grid-animate" : ""}`}
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gridAutoRows: "110px",
+          gap: "15px 12px",
+          justifyItems: "center",
+          alignItems: "center",
+          margin: "0 auto",
+          padding: 0,
+          maxWidth: 500,
+        }}
+      >
+        {indices.map((imgIdx, i) => (
           <div
             className="moodboard-img-wrap"
             key={MOODBOARD_IMAGES[imgIdx]}
-            style={{ animationDelay: `${i * 35}ms` }}
+            style={{
+              animationDelay: `${i * 30}ms`
+            }}
           >
             <img
               src={MOODBOARD_IMAGES[imgIdx]}
-              alt="Dreamy Love Mood"
+              alt={`Moodboard item ${imgIdx + 1}`}
               className="moodboard-img"
-              draggable={false}
               loading="lazy"
+              draggable={false}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                aspectRatio: "1/1",
+                borderRadius: 16,
+                background: "#f6f6fa"
+              }}
             />
           </div>
         ))}
