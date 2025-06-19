@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Baloo+2:wght@600&display=swap');
+
+.pickup-lines-box.pastel-card {
+  background: linear-gradient(130deg, #ffe4e1 77%, #ffd1dc 100%, #e0bbe47a 97%);
+  border-radius: 2.1rem;
+  box-shadow: 0 7px 40px 0 #e0bbe445, 0 3px 15px 0 #ffd1dc4b;
+  padding: 36px 24px 28px 24px;
+  margin-bottom: 35px;
+  margin-top: 0;
+  border: 1.62px solid #e0bbe4;
+  position: relative;
+  transition: box-shadow 0.21s, transform 0.13s;
+  z-index: 2;
+  min-width: 288px;
+  max-width: 420px;
+}
+
+.pickup-lines-box:hover,
+.pickup-lines-box:focus-within {
+  box-shadow: 0 8px 39px 0 #ffd1dc9f, 0 1.2px 22px #e0bbe477;
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Title styles */
+.pickup-title-bubble {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.pickup-title {
+  font-family: "Pacifico", "Baloo 2", cursive, sans-serif;
+  font-size: 1.52rem;
+  color: #e06db1;
+  text-shadow: 0 2px 8px #ffe4e188, .5px .5px #ffd1dc55;
+  font-weight: 700;
+  letter-spacing: .02em;
+  margin-left: 6px;
+  margin-right: 4px;
+  user-select: none;
+}
+
+.title-sparkle-anim {
+  font-size: 1.45em;
+  margin-right: 3px;
+  animation: sparkle-pop 1.5s infinite cubic-bezier(.59,.03,.44,1.05);
+}
+
+@keyframes sparkle-pop {
+  0%   { transform: scale(1) rotate(-8deg);}
+  9%   { transform: scale(1.23) rotate(8deg);}
+  16%  { transform: scale(1) rotate(-3deg);}
+  100% { transform: scale(1) rotate(-8deg);}
+}
+
+/* Sparkle Bar */
+.sparkle-bar {
+  margin-left: 9px;
+  user-select: none;
+  font-size: 1.18em;
+  letter-spacing: -.07em;
+}
+.sparkle { opacity: .80; display: inline-block; }
+.s1 { animation: sparkle-anim 1.3s infinite alternate; }
+.s2 { animation: sparkle-anim 1.8s infinite alternate .24s;}
+.s3 { animation: sparkle-anim 2.1s infinite alternate .51s;}
+.s4 { animation: sparkle-anim 1.6s infinite alternate .73s;}
+.s5 { animation: sparkle-anim 1.38s infinite alternate .97s;}
+
+@keyframes sparkle-anim {
+  0%   { filter: brightness(1); opacity: .77; transform: scale(1);}
+  42%  { filter: brightness(1.1); opacity: 1; transform: scale(1.19);}
+  100% { filter: brightness(.97); opacity: 0.7; transform: scale(1.06);}
+}
+
+/* Speech Bubble Styles */
+.pickup-speech-bubble {
+  position: relative;
+  min-height: 58px;
+  background: linear-gradient(106deg, #ffe4e1cc 80%, #e0bbe424 100%);
+  border-radius: 2.1em 2.1em 2.6em 1.4em / 2.6em 2.3em 2.2em 1.48em;
+  box-shadow: 0 2.3px 12px #ffd1dc44, 0 4px 27px #e0bbe41f;
+  padding: 19px 20px 17px 22px;
+  font-size: 1.17rem;
+  font-family: "Baloo 2", "Comic Sans MS", cursive, sans-serif;
+  color: #ca86af;
+  margin-bottom: 17px;
+  margin-top: 11px;
+  word-break: break-word;
+  transition: box-shadow .17s, background .16s, transform .19s;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  animation: none;
+  z-index: 2;
+}
+
+.pickup-speech-bubble::after {
+  content: "";
+  position: absolute;
+  left: 29px;
+  top: 100%;
+  width: 30px;
+  height: 20px;
+  background: linear-gradient(132deg,#ffe4e199 80%,#e0bbe424 100%);
+  border-bottom-right-radius: 22px 11px;
+  transform: skewY(11deg) scaleX(0.7);
+  z-index: 1;
+  opacity: .77;
+  pointer-events: none;
+}
+
+.pickup-speech-bubble.pickup-speech-bubble-faded {
+  opacity: 0.65;
+  font-style: italic;
+}
+
+.pickup-speech-bubble-pop {
+  animation: bubble-pop 0.52s cubic-bezier(.49,1,.72,1.47);
+}
+@keyframes bubble-pop {
+  0%   { transform: scale(0.89) rotate(-5deg);}
+  40%  { transform: scale(1.11) rotate(3deg);}
+  72%  { transform: scale(0.96) rotate(-1deg);}
+  100% { transform: scale(1) rotate(0);}
+}
+
+.pickup-bubble-text {
+  font-size: 1.19rem;
+  color: #a76fb9;
+  font-family: "Baloo 2", "Comic Sans MS", cursive, sans-serif;
+  line-height: 1.31;
+  font-weight: 600;
+  letter-spacing: -.01em;
+}
+
+.pickup-bubble-placeholder {
+  color: #d3b1d8;
+  opacity: .77;
+  font-size: 1.11rem;
+  font-family: "Baloo 2", cursive, sans-serif;
+  font-weight: 500;
+}
+
+.pickup-copy-btn {
+  margin-left: auto;
+  background: #ffd1dc;
+  border: none;
+  border-radius: 100%;
+  width: 41px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1.2px 7px #e0bbe446;
+  transition: background .17s, transform .13s;
+  font-size: 1.48em;
+  color: #e06db1;
+  position: relative;
+}
+.pickup-copy-btn:hover, .pickup-copy-btn:focus {
+  background: #ffe4e1;
+  color: #ca86af;
+  outline: none;
+}
+
+.pickup-copy-btn-animate, .pickup-copy-btn:active {
+  animation: copy-btn-glow 0.63s cubic-bezier(.45,1.09,.36,1.23);
+}
+@keyframes copy-btn-glow {
+  0%   { transform: scale(1) rotate(-7deg);}
+  25%  { transform: scale(1.22) rotate(9deg); filter: drop-shadow(0 2px 8px #ffd1dc);}
+  66%  { transform: scale(0.93) rotate(-2deg);}
+  100% { transform: scale(1) rotate(0);}
+}
+
+/* Show Me a Line Button */
+.pickup-show-btn {
+  background: linear-gradient(93deg, #ffe4e1 54%, #ffd1dc 99%);
+  color: #e06db1;
+  border: none;
+  border-radius: 1.6em;
+  font-family: "Pacifico", "Baloo 2", cursive, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  box-shadow: 0 2px 12px #ffd1dc39;
+  cursor: pointer;
+  padding: 10px 35px 10px 20px;
+  margin: 0 auto;
+  margin-top: 11px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.17s, transform 0.13s, color .13s, box-shadow .14s;
+  position: relative;
+  z-index: 3;
+}
+
+.pickup-show-btn:hover,
+.pickup-show-btn:focus {
+  background: #ffd1dc;
+  color: #ca86af;
+  box-shadow: 0 4px 15px #e0bbe433, 0 0 12px #ffd1dc77;
+  transform: scale(1.047);
+  outline: none;
+}
+
+.show-sparkle {
+  font-size: 1.17em;
+  margin-right: 7px;
+  animation: pulse-sparkle 1.25s infinite alternate;
+}
+@keyframes pulse-sparkle {
+  0%   { opacity: .86; transform: scale(1);}
+  55%  { opacity: 1;   transform: scale(1.19);}
+  100% { opacity: .79; transform: scale(1.08);}
+}
+
+@media (max-width: 530px) {
+  .pickup-lines-box.pastel-card {
+    padding: 16px 4vw 14px 4vw;
+    min-width: 92vw;
+    max-width: 98vw;
+  }
+}

@@ -11,6 +11,7 @@ import ZodiacPredictionSection from "./ZodiacPredictionSection";
 import "./ZodiacPredictionSection.css";
 import SpinTheHeartBox from "./SpinTheHeartBox";
 import "./SpinTheHeartBox.css";
+import PickupLinesBox from "./PickupLinesBox";
 
 // PUBLIC_INTERFACE
 function App() {
@@ -260,6 +261,8 @@ function App() {
             <div className="spin-the-heart-wrap">
               <SpinTheHeartBox />
             </div>
+            {/* Flirty Pickup Lines Feature Box */}
+            <PickupLinesBox />
           </div>
         </div>
       </main>
