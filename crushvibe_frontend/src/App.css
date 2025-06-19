@@ -1,16 +1,25 @@
 :root {
-  --base-light: #00ffff;
-  --base-dark: #00008b;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
+  --primary: #ffd1dc;
+  --secondary: #e0bbe4;
+  --accent: #ffe4e1;
+  --base-bg: #fffafc;
+  --card-bg: #fff;
+  --input-bg: #ffe4e1;
+  --header-gradient: linear-gradient(90deg, #ffd1dc 60%, #e0bbe4 100%);
+  --shadow-1: 0 8px 32px rgba(224, 187, 228, 0.13), 0 1.5px 4px 0 #ffd1dc77;
+  --shadow-btn: 0 2px 12px 0 #e0bbe477, 0 1px 2px #ffd1dc66;
+  --text-color: #943052;
+  --text-secondary: #a474a2;
+  --border-color: #ffc6d0;
+  --form-border: #e0bbe4;
 }
 
 body {
   margin: 0;
-  font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  background-color: var(--base-dark);
+  font-family: 'Inter', 'Fredoka', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  background: var(--base-bg);
   color: var(--text-color);
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -19,32 +28,40 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: var(--base-bg);
 }
 
 .navbar {
-  background-color: var(--base-dark);
-  padding: 16px;
+  background: var(--header-gradient);
+  box-shadow: var(--shadow-1);
+  padding: 16px 0 10px 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--border-color);
+  justify-content: center;
   position: fixed;
   top: 0;
   width: 100%;
-  box-sizing: border-box;
+  border-bottom: none;
   z-index: 100;
 }
 
 .logo {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  color: var(--text-color);
+  letter-spacing: 1px;
+  text-shadow: 0 1.5px 0 #fff4, 0 2px 16px #ffd1dc55;
+  user-select: none;
 }
 
 .logo-symbol {
-  color: var(--base-light);
+  display: inline-block;
+  color: var(--secondary);
+  font-size: 1.1em;
+  text-shadow: 0 0 4px #ffd1dcaa, 0 1.5px 0 #fff4;
 }
 
 .container {
@@ -56,14 +73,192 @@ body {
 }
 
 .hero {
-  padding-top: 120px;
-  padding-bottom: 64px;
-  text-align: center;
+  margin-top: 42px;
+  padding: 56px 0 64px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 26px;
 }
+
+@media (max-width: 650px) {
+  .container { padding: 0 12px; }
+  .hero { padding: 80px 0 32px 0; }
+}
+
+/* Card layout styling for the main app region */
+.card-outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border-radius: 22px;
+  box-shadow: var(--shadow-1), 0 2px 16px #ffd1dc22;
+  padding: 44px 32px 32px 32px;
+  margin-top: 120px;
+  transition: box-shadow 0.18s cubic-bezier(.41,1,.69,1);
+  width: 100%;
+  max-width: 420px;
+}
+
+@media (max-width: 599px) {
+  .card-outer {
+    padding: 26px 6px 18px 6px;
+    margin-top: 72px;
+  }
+}
+
+/* Typography */
+.subtitle {
+  color: var(--secondary);
+  font-weight: 500;
+  font-size: 1.09rem;
+  margin-bottom: 6px;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  margin: 0;
+  color: var(--primary);
+  line-height: 1.15;
+  text-shadow: 0 1.5px 0 #f5e2eb55;
+}
+
+.description {
+  font-size: 1.12rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  max-width: 420px;
+  margin-bottom: 12px;
+}
+
+input[type="text"], input[type="name"], input:not([type]), input {
+  display: block;
+  width: 100%;
+  padding: 12px 18px;
+  font-size: 1.03rem;
+  border-radius: 14px;
+  background: var(--input-bg);
+  color: var(--text-color);
+  border: 1.7px solid var(--form-border);
+  outline: none;
+  margin-bottom: 0px;
+  margin-top: 4px;
+  box-shadow: none;
+  transition: border 0.12s, box-shadow 0.15s;
+}
+
+input:focus {
+  border-color: var(--secondary);
+  background: #fff2fa;
+  box-shadow: 0 0 0 3px #ffd1dc66, 0 2px 16px #e0bbe435;
+}
+
+input[aria-invalid="true"] {
+  border: 2px solid #ffb3c6;
+  background: #fff2f5;
+}
+
+.btn {
+  background: linear-gradient(90deg, #ffd1dc 85%, #e0bbe4 100%);
+  color: #943052;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 1.04rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-btn);
+  transition: background 0.14s, box-shadow 0.13s, transform 0.07s;
+  outline: none;
+  letter-spacing: 0.5px;
+  margin-right: 0.25em;
+}
+
+.btn:active, .btn-large:active {
+  transform: scale(0.96);
+}
+
+.btn:hover, .btn:focus {
+  background: linear-gradient(90deg, #ffe4e1 82%, #ffd1dc 100%);
+  color: #c05a92;
+  box-shadow: 0 3px 12px 0 #e0bbe499;
+}
+
+.btn-large {
+  font-size: 1.09rem;
+  padding: 13px 28px;
+}
+
+.btn[disabled], .btn:disabled, .btn-large:disabled {
+  opacity: .60;
+  filter: grayscale(.34);
+  cursor: not-allowed;
+}
+
+/* Reset button override */
+.btn.reset-btn {
+  background: var(--secondary);
+  color: #fff;
+  box-shadow: 0 1px 8px 0 #e0bbe4cc;
+}
+.btn.reset-btn:hover, .btn.reset-btn:focus {
+  background: #ffe4e1;
+  color: var(--primary);
+}
+
+/* Flirty verdict box */
+.verdict-card {
+  margin-top: 32px;
+  width: 100%;
+  border-radius: 18px;
+  background: linear-gradient(90deg, #ffe4e1 85%, #e0bbe4 100%);
+  box-shadow: 0 3px 16px 0 #e0bbe4bb;
+  text-align: center;
+  padding: 28px 20px 18px;
+  min-height: 60px;
+  animation: revealVerdict 0.5s cubic-bezier(0.36,2.2,0.49,1.1) 1;
+}
+
+@keyframes revealVerdict {
+  from { opacity: 0; transform: scale(0.91);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+/* Flirty Line text styling */
+.flirty-label {
+  font-weight: 400;
+}
+.flirty-line {
+  font-weight: 700;
+  color: #e54a79;
+}
+
+/* Accessibility, focus, interactions */
+*:focus-visible {
+  outline: 3px dashed #e0bbe4;
+  outline-offset: 2px;
+}
+
+::-webkit-input-placeholder { color: #cb8ca6cc; opacity: 1; }
+::-moz-placeholder { color: #cb8ca6cc; opacity: 1; }
+:-ms-input-placeholder { color: #cb8ca6cc; opacity: 1; }
+::placeholder { color: #cb8ca6cc; opacity: 1; }
+
+/* Hide browser autofill color for inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  background-color: #ffe4e1 !important;
+  box-shadow: 0 0 0 30px #ffe4e1 inset !important;
+}
+
 
 .subtitle {
   color: var(--base-light);
