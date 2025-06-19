@@ -8,6 +8,8 @@ import LoveMoodboardSection from './LoveMoodboardSection';
 import "./LoveMoodboardSection.css"; // Import CSS for LoveMoodboardSection
 import ZodiacPredictionSection from "./ZodiacPredictionSection";
 import "./ZodiacPredictionSection.css";
+import SpinTheHeartBox from "./SpinTheHeartBox";
+import "./SpinTheHeartBox.css";
 
 // PUBLIC_INTERFACE
 function App() {
@@ -164,10 +166,8 @@ function App() {
           <LoveMoodboardSection />
           {/* 2: Zodiac Prediction Section */}
           <ZodiacPredictionSection />
-          {/* 3: Spin the Heart Game - placeholder for stacking */}
-          <div style={{ height: 88, borderRadius: "1.4rem", background: "#e0bbe433", display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ca86af', fontWeight: 500, fontSize: "1.07rem", opacity: 0.6 }}>
-            (Spin the Heart Game coming soon)
-          </div>
+          {/* 3: Spin the Heart Wheel Game */}
+          <SpinTheHeartBox />
         </div>
         {/* Main box stays centered/right */}
         <div
