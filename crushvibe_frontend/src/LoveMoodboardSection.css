@@ -2,16 +2,20 @@
 
 .love-moodboard-box {
   background: linear-gradient(137deg, #ffe4e1 65%, #e0bbe4 100%, #fffffbe8 100%);
-  border-radius: 1.35rem;
-  box-shadow: 0 4px 20px 0 rgba(224, 187, 228, 0.17);
-  padding: 14px 10px 12px 10px;
-  margin-bottom: 16px;
-  margin-top: 8px;
-  border: 1px solid #ffd1dc;
+  border-radius: 2.1rem;
+  box-shadow: 0 7px 36px 0 rgba(224, 187, 228, 0.13);
+  padding: 32px 20px 22px 20px;
+  margin-bottom: 24px;
+  margin-top: 0;
+  border: 2px solid #e0bbe4;
   transition: box-shadow 0.21s, transform 0.14s;
   position: relative;
-  max-width: 220px;
+  min-width: 485px;
+  max-width: 535px;
   width: 100%;
+  box-sizing: border-box;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .love-moodboard-box:hover {

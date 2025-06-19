@@ -3,15 +3,18 @@
 /* Card styles */
 .lovedare-box.pastel-love-dare-card {
   background: linear-gradient(129deg, #ffe4e1 65%, #fffde1 100%, #e0bbe4cc 105%);
-  border-radius: 2.25rem;
-  box-shadow: 0 6px 37px 0 #ffe4e17a, 0 2px 15px 0 #ffd1dc61;
-  padding: 36px 19px 24px 19px;
+  border-radius: 2.1rem;
+  box-shadow: 0 7px 36px 0 rgba(224, 187, 228, 0.13);
+  padding: 32px 20px 22px 20px;
+  margin-bottom: 24px;
   margin-top: 0;
-  margin-bottom: 32px;
-  border: 1.5px solid #e0bbe4c9;
-  min-width: 260px;
-  max-width: 452px;
+  border: 2px solid #e0bbe4;
+  min-width: 485px;
+  max-width: 535px;
   width: 100%;
+  box-sizing: border-box;
+  margin-left: auto !important;
+  margin-right: auto !important;
   z-index: 2;
   position: relative;
   overflow: visible;

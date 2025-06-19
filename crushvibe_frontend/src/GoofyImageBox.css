@@ -3,15 +3,18 @@
 .goofy-image-box.laugh-card {
   background: linear-gradient(133deg, #fffde1 60%, #e0bbe4 92%, #ffd1dc 100%);
   border-radius: 2.1rem;
-  box-shadow: 0 4px 24px 0 #ffd1dc36, 0 1.5px 15px 0 #e0bbe427;
-  padding: 28px 10px 18px 10px;
-  margin-bottom: 29px;
+  box-shadow: 0 7px 36px 0 rgba(224, 187, 228, 0.13);
+  padding: 32px 20px 22px 20px;
+  margin-bottom: 24px;
   margin-top: 0;
-  border: 2.1px dashed #ffd1dc;
-  outline: 1.7px solid #e0bbe4aa; /* playful layered look */
-  min-width: 165px;
-  max-width: 250px;
+  border: 2px dashed #ffd1dc;
+  outline: 1.5px solid #e0bbe4aa;
+  min-width: 485px;
+  max-width: 535px;
   width: 100%;
+  box-sizing: border-box;
+  margin-left: auto !important;
+  margin-right: auto !important;
   z-index: 2;
   overflow: visible;
   position: relative;

@@ -11,8 +11,8 @@ asset bundle.js 1.64 MiB [emitted] (name: main)
 asset index.html 1.98 KiB [emitted]
 runtime modules 27.5 KiB 14 modules
 cacheable modules 1.42 MiB
-  modules by path ./src/ 172 KiB
-    modules by path ./src/*.css 84 KiB 22 modules
+  modules by path ./src/ 173 KiB
+    modules by path ./src/*.css 85 KiB 22 modules
     modules by path ./src/*.js 87.6 KiB
       ./src/index.js 530 bytes [built] [code generated]
       + 11 modules
@@ -23,14 +23,94 @@ cacheable modules 1.42 MiB
       ./.ve/EditorOverlay.css 2.25 KiB [built] [code generated]
       ./node_modules/css-loader/dist/cjs.js!./.ve/EditorOverlay.css 697 bytes [built] [code generated]
     ./.ve/EditorOverlay.jsx 1.58 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 1499 ms
+webpack 5.99.9 compiled successfully in 1518 ms
 assets by status 1.98 KiB [cached] 1 asset
-assets by path *.js 1.66 MiB
+assets by path *.js 1.65 MiB
   asset bundle.js 1.64 MiB [emitted] (name: main)
-  asset main.1edff6fff0b1cbb8663a.hot-update.js 15.3 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.1edff6fff0b1cbb8663a.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.66 MiB = bundle.js 1.64 MiB main.1edff6fff0b1cbb8663a.hot-update.js 15.3 KiB
-cached modules 1.41 MiB [cached] 69 modules
+  asset main.3cfd6dde8ab30fdab901.hot-update.js 8.06 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.3cfd6dde8ab30fdab901.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.65 MiB = bundle.js 1.64 MiB main.3cfd6dde8ab30fdab901.hot-update.js 8.06 KiB
+cached modules 1.42 MiB [cached] 69 modules
 runtime modules 27.5 KiB 14 modules
-./node_modules/css-loader/dist/cjs.js!./src/App.css 12.4 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 92 ms
+./node_modules/css-loader/dist/cjs.js!./src/LoveMoodboardSection.css 5.41 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 99 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.65 MiB
+  asset bundle.js 1.64 MiB [emitted] (name: main)
+  asset main.869b2fd0149bdfa00928.hot-update.js 9.58 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.869b2fd0149bdfa00928.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.65 MiB = bundle.js 1.64 MiB main.869b2fd0149bdfa00928.hot-update.js 9.58 KiB
+cached modules 1.42 MiB [cached] 69 modules
+runtime modules 27.5 KiB 14 modules
+./node_modules/css-loader/dist/cjs.js!./src/LovePollBox.css 6.89 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 47 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.65 MiB
+  asset bundle.js 1.64 MiB [emitted] (name: main)
+  asset main.e9748ee7a8ce8d1e6ec5.hot-update.js 9.06 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.e9748ee7a8ce8d1e6ec5.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.65 MiB = bundle.js 1.64 MiB main.e9748ee7a8ce8d1e6ec5.hot-update.js 9.06 KiB
+cached modules 1.42 MiB [cached] 69 modules
+runtime modules 27.5 KiB 14 modules
+./node_modules/css-loader/dist/cjs.js!./src/PickupLinesBox.css 6.4 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 51 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.65 MiB
+  asset bundle.js 1.64 MiB [emitted] (name: main)
+  asset main.00b80b2973ad3051251f.hot-update.js 5.93 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.00b80b2973ad3051251f.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.65 MiB = bundle.js 1.64 MiB main.00b80b2973ad3051251f.hot-update.js 5.93 KiB
+cached modules 1.42 MiB [cached] 69 modules
+runtime modules 27.5 KiB 14 modules
+./node_modules/css-loader/dist/cjs.js!./src/GoofyImageBox.css 3.4 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 35 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.65 MiB
+  asset bundle.js 1.64 MiB [emitted] (name: main)
+  asset main.9ddfd1cf73332493e967.hot-update.js 8.98 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.9ddfd1cf73332493e967.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.65 MiB = bundle.js 1.64 MiB main.9ddfd1cf73332493e967.hot-update.js 8.98 KiB
+cached modules 1.42 MiB [cached] 69 modules
+runtime modules 27.5 KiB 14 modules
+./node_modules/css-loader/dist/cjs.js!./src/ConfessionsWallBox.css 6.29 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 38 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.65 MiB
+  asset bundle.js 1.64 MiB [emitted] (name: main)
+  asset main.9781b2a42d88d637aa6b.hot-update.js 10 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.9781b2a42d88d637aa6b.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.65 MiB = bundle.js 1.64 MiB main.9781b2a42d88d637aa6b.hot-update.js 10 KiB
+cached modules 1.42 MiB [cached] 69 modules
+runtime modules 27.5 KiB 14 modules
+./node_modules/css-loader/dist/cjs.js!./src/LoveDareBox.css 7.37 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 37 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.65 MiB
+  asset bundle.js 1.64 MiB [emitted] (name: main)
+  asset main.918e95f46d821e399a86.hot-update.js 8.65 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.918e95f46d821e399a86.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.65 MiB = bundle.js 1.64 MiB main.918e95f46d821e399a86.hot-update.js 8.65 KiB
+cached modules 1.42 MiB [cached] 69 modules
+runtime modules 27.5 KiB 14 modules
+./node_modules/css-loader/dist/cjs.js!./src/ZodiacPredictionSection.css 5.99 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 48 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.65 MiB
+  asset bundle.js 1.64 MiB [emitted] (name: main)
+  asset main.50b156a82a1d34cce068.hot-update.js 7.32 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.50b156a82a1d34cce068.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.65 MiB = bundle.js 1.64 MiB main.50b156a82a1d34cce068.hot-update.js 7.32 KiB
+cached modules 1.42 MiB [cached] 69 modules
+runtime modules 27.5 KiB 14 modules
+./src/LoveMoodboardSection.js 4.66 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 53 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.65 MiB
+  asset bundle.js 1.64 MiB [emitted] (name: main)
+  asset main.4fb59bdecfcffca542ea.hot-update.js 7.77 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.4fb59bdecfcffca542ea.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.65 MiB = bundle.js 1.64 MiB main.4fb59bdecfcffca542ea.hot-update.js 7.77 KiB
+cached modules 1.42 MiB [cached] 69 modules
+runtime modules 27.5 KiB 14 modules
+./node_modules/css-loader/dist/cjs.js!./src/SpinTheHeartBox.css 5.17 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 46 ms

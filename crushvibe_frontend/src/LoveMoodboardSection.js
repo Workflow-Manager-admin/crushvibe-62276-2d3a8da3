@@ -61,14 +61,14 @@ function LoveMoodboardSection() {
           display: "grid",
           gridTemplateColumns: "repeat(2, 1fr)",
           gridTemplateRows: "repeat(2, 1fr)",
-          gap: "8px 5px", // decrease gap for compactness
+          gap: "28px 26px", // much larger gap for bigger box
           justifyItems: "center",
           alignItems: "center",
           margin: "0 auto",
           padding: 0,
-          maxWidth: 210, // smaller maxWidth for compact box
+          maxWidth: 330,
           minWidth: 0,
-          height: 142, // adjust for shorter grid area
+          height: 260,
         }}
       >
         {emojis.map((emoji, i) => (
@@ -90,19 +90,19 @@ function LoveMoodboardSection() {
               aria-label="decorative emoji"
               tabIndex={-1}
               style={{
-                fontSize: "2.18rem", // smaller emoji size
+                fontSize: "4.9rem",
                 userSelect: "none",
                 pointerEvents: "none",
-                filter: "drop-shadow(0 1.2px 6px #ffd1dc) drop-shadow(0 0.7px 3px #e0bbe4bb)",
-                borderRadius: "14px",
+                filter: "drop-shadow(0 1.2px 12px #ffd1dc) drop-shadow(0 1.7px 8px #e0bbe4bb)",
+                borderRadius: "18px",
                 background: "rgba(255,244,250,0.11)",
                 transition: "transform 0.23s",
                 margin: "0 auto",
                 display: "inline-flex",
                 justifyContent: "center",
                 alignItems: "center",
-                width: "90%",
-                height: "90%",
+                width: "96%",
+                height: "96%",
                 willChange: "transform"
               }}
             >

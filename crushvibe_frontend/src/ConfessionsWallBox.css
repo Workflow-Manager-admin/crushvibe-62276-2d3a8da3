@@ -4,13 +4,17 @@
   position: relative;
   background: linear-gradient(131deg, #fffbe1 60%, #ffe4e1 99%, #ffe5ef 100%);
   border-radius: 2.1rem;
-  box-shadow: 0 6px 37px 0 #ffe4e15a, 0 2px 10px 0 #ffd1dc46;
-  padding: 35px 20px 25px 20px;
-  margin-bottom: 30px;
+  box-shadow: 0 7px 36px 0 rgba(224, 187, 228, 0.13);
+  padding: 32px 20px 22px 20px;
+  margin-bottom: 24px;
   margin-top: 0;
-  border: 1.3px solid #ffd1dc;
-  min-width: 275px;
-  max-width: 452px;
+  border: 2px solid #ffd1dc;
+  min-width: 485px;
+  max-width: 535px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: auto !important;
+  margin-right: auto !important;
   z-index: 2;
   overflow: visible;
 }
