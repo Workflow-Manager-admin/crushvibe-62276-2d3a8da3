@@ -91,20 +91,20 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 32px;
-  max-width: 1440px;
+  gap: 19px; /* reduced for more contiguous look */
+  max-width: 1540px;
   margin: 0 auto;
-  padding-bottom: 18px;
+  padding-bottom: 14px;
 }
 
 /* Left column: Moodboard + Zodiac */
 .lovechamber-section-col {
-  min-width: 420px;
-  max-width: 452px;
-  width: 452px;
+  min-width: 485px;
+  max-width: 535px;
+  width: 525px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px; /* slight gap decrease between stacked boxes */
   align-items: stretch;
   padding-left: 0;
   padding-right: 0;
@@ -117,13 +117,13 @@ body {
 
 /* Right column: Compatibility + SpinTheHeart */
 .lovechamber-compat-col {
-  min-width: 420px;
-  max-width: 452px;
-  width: 452px;
+  min-width: 485px;
+  max-width: 535px;
+  width: 525px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 36px;
+  gap: 29px; /* reduce gap for more visual connection */
   margin-top: 0;
   margin-bottom: 0;
   box-sizing: border-box;
@@ -131,13 +131,13 @@ body {
 
 /* Make main-box and SpinTheHeartBox larger */
 .centered-mainbox {
-  min-width: 420px !important;
-  max-width: 452px !important;
+  min-width: 485px !important;
+  max-width: 535px !important;
   width: 100%;
   margin: 0 auto;
   margin-bottom: 0;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: 32px;
+  padding-bottom: 32px;
   z-index: 2;
   box-sizing: border-box;
   background: linear-gradient(135deg, #ffe4e1 0%, #ffd1dc 84%, #e0bbe4 100%);
@@ -216,8 +216,8 @@ body {
 
 /* Make all major boxes the same width/height in columns */
 .main-box, .love-moodboard-box, .zodiac-box, .love-poll-box, .pickup-lines-box, .lovedare-box, .confessions-wall-box, .spin-heart-box {
-  min-width: 420px;
-  max-width: 452px;
+  min-width: 485px;
+  max-width: 535px;
   width: 100%;
   box-sizing: border-box;
   margin-left: auto !important;
@@ -232,8 +232,8 @@ body {
 .pastel-card,
 .dreamy-zodiac-box,
 .dreamy-spin-box {
-  min-width: 420px;
-  max-width: 452px;
+  min-width: 485px;
+  max-width: 535px;
   width: 100%;
   box-sizing: border-box;
   margin-left: auto !important;
@@ -299,7 +299,7 @@ body {
 .lovechamber-section-col > *,
 .lovechamber-compat-col > * {
   margin-top: 0 !important;
-  margin-bottom: 34px !important;
+  margin-bottom: 24px !important;
 }
 .lovechamber-section-col > *:last-child,
 .lovechamber-compat-col > *:last-child {
@@ -333,7 +333,7 @@ body {
     margin-bottom: 10px;
   }
   .centered-mainbox, .spin-the-heart-wrap {
-    min-width: 96vw !important;
+    min-width: 98vw !important;
     max-width: 99vw !important;
     margin-left: auto;
     margin-right: auto;
