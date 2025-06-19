@@ -5,7 +5,7 @@ import './App.css';
 import FloatingHeartsBackground from './FloatingHeartsBackground';
 import Logo from './Logo';
 import LoveMoodboardSection from './LoveMoodboardSection';
-import "./LoveMoodboardSection.css"; // Import CSS for LoveMoodboardSection
+import "./LoveMoodboardSection.css";
 import ZodiacPredictionSection from "./ZodiacPredictionSection";
 import "./ZodiacPredictionSection.css";
 import SpinTheHeartBox from "./SpinTheHeartBox";
@@ -87,117 +87,27 @@ function App() {
         minHeight: "100vh",
         width: "100vw",
         background: "linear-gradient(132deg, #e0bbe4 45%, #ffd1dc 100%)",
-        display: "flex",
-        alignItems: "flex-start",
-        justifyContent: "center",
         position: "relative"
       }}
     >
+      {/* Foreground floating animation across top area */}
       <FloatingHeartsBackground />
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "flex-start",
-          width: "100%",
-          maxWidth: 1120,
-          marginTop: 36,
-          gap: 28,
-        }}
-      >
-        {/* Left column with LOVE CHAMBER header and stack of sections */}
-        <div
-          className="lovechamber-left-col"
-          style={{
-            minWidth: 295,
-            maxWidth: 335,
-            width: "28vw",
-            marginRight: 0,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "stretch",
-            paddingLeft: 5,
-            paddingRight: 6,
-            position: "relative"
-          }}
-        >
-          {/* The LOVE CHAMBER header */}
-          <header
-            style={{
-              display: "flex",
-              alignItems: "center",
-              height: "78px",
-              borderTopLeftRadius: "2.1rem",
-              borderTopRightRadius: "2.1rem",
-              background: "linear-gradient(90deg, #ffd1dc 60%, #e0bbe4 100%)",
-              borderBottom: "1.3px solid #e0bbe4",
-              boxShadow: "none",
-              marginBottom: 0
-            }}
-          >
-            <div style={{ marginLeft: 15, marginRight: 8 }}>
-              <Logo size={51} />
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flex: 1,
-                justifyContent: "center",
-                alignItems: "center"
-              }}
-            >
-              <span
-                style={{
-                  fontFamily: "'Times New Roman', Times, serif",
-                  fontWeight: 700,
-                  fontSize: "2.0rem",
-                  color: "#e0bbe4",
-                  letterSpacing: "1.8px",
-                  textShadow: "0px 2px 8px #ffe4e18a, 0.5px 0.5px #fff1",
-                  marginRight: 57,
-                  marginLeft: 0,
-                }}
-                children="LOVE CHAMBER"
-              />
-            </div>
-          </header>
-          {/* 1: Love Moodboard Box */}
-          <LoveMoodboardSection />
-          {/* 2: Zodiac Prediction Section */}
-          <ZodiacPredictionSection />
-          {/* SpinTheHeartBox removed from left column */}
+      {/* Full-width header, always at top */}
+      <header className="lovechamber-header">
+        <div className="lovechamber-header-inner">
+          <Logo size={57} />
+          <span className="lovechamber-header-title">LOVE CHAMBER</span>
         </div>
-        {/* Main box stays centered/right, stacking: Header, Main Compatibility, then Spin The Heart */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            minWidth: 340,
-            maxWidth: 440,
-            width: "100%",
-            margin: "0 10px",
-            flex: 1,
-            gap: 0
-          }}
-        >
-          <div
-            className="main-box"
-            style={{
-              background: "linear-gradient(135deg, #ffe4e1 0%, #ffd1dc 84%, #e0bbe4 100%)",
-              borderRadius: "2.1rem",
-              boxShadow: "0 7px 36px 0 rgba(224, 187, 228, 0.13)",
-              minWidth: 340,
-              maxWidth: 420,
-              width: "100%",
-              padding: "0 0 38px 0",
-              border: "2px solid #e0bbe4",
-              position: "relative",
-              marginBottom: 0
-            }}
-          >
-            <main>
+      </header>
+      {/* Main content below fixed header */}
+      <main className="lovechamber-main-content">
+        <div className="lovechamber-section-row">
+          <div className="lovechamber-section-col">
+            <LoveMoodboardSection />
+            <ZodiacPredictionSection />
+          </div>
+          <div className="lovechamber-compat-col">
+            <div className="main-box centered-mainbox">
               <div className="hero" style={{
                 paddingTop: "35px",
                 maxWidth: "95%",
@@ -219,7 +129,6 @@ function App() {
                     textAlign: "center",
                   }}
                 >
-                  {/* Tagline */}
                   Enter your name and your crush’s name to unveil your playful fate and get a flirty line!
                 </div>
                 <form
@@ -345,14 +254,14 @@ function App() {
                   </div>
                 )}
               </div>
-            </main>
-          </div>
-          {/* Now add the SpinTheHeartBox directly below the main-box */}
-          <div style={{ width: "100%", maxWidth: 420, marginTop: 26 }}>
-            <SpinTheHeartBox />
+            </div>
+            {/* Spin The Heart Box bigger, below compatibility */}
+            <div className="spin-the-heart-wrap">
+              <SpinTheHeartBox />
+            </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
