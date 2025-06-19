@@ -12,6 +12,7 @@ import "./ZodiacPredictionSection.css";
 import SpinTheHeartBox from "./SpinTheHeartBox";
 import "./SpinTheHeartBox.css";
 import PickupLinesBox from "./PickupLinesBox";
+import LovePollBox from "./LovePollBox";
 
 // PUBLIC_INTERFACE
 function App() {
@@ -263,6 +264,8 @@ function App() {
             </div>
             {/* Flirty Pickup Lines Feature Box */}
             <PickupLinesBox />
+            {/* Love Poll Box: below Pickup Lines */}
+            <LovePollBox />
           </div>
         </div>
       </main>
