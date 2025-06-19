@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./PickupLinesBox.css";
 
-// Flirty pickup lines (same playful vibe as main page, but unique from App.js)
+// Flirty pickup lines (distinct playful set)
 const PICKUP_LINES = [
   "Are you a magician? Because whenever I look at you, everyone else disappears.",
   "Do you have a name, or can I call you mine?",
