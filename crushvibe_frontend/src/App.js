@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import FloatingHeartsBackground from './FloatingHeartsBackground';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -71,7 +72,9 @@ function App() {
   }
 
   return (
-    <div className="app">
+    <div className="app" style={{ position: "relative" }}>
+      {/* Playful floating hearts/stars background */}
+      <FloatingHeartsBackground />
       <nav className="navbar">
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
