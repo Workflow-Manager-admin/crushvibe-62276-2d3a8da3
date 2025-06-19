@@ -264,16 +264,14 @@ function App() {
                 )}
               </div>
             </div>
-            {/* Spin The Heart Box bigger, below compatibility */}
-            <div className="spin-the-heart-wrap">
-              <SpinTheHeartBox />
+            {/* Love Dare of the Day Box: now below compatibility result */}
+            <div style={{ width: '100%', maxWidth: 560, margin: "36px auto 0 auto", zIndex: 3 }}>
+              <LoveDareBox />
             </div>
             {/* Flirty Pickup Lines Feature Box */}
             <PickupLinesBox />
             {/* Confessions Wall Box: below Pickup Lines */}
             <ConfessionsWallBox />
-            {/* Love Dare of the Day Card: below Confessions Wall */}
-            <LoveDareBox />
           </div>
         </div>
       </main>
