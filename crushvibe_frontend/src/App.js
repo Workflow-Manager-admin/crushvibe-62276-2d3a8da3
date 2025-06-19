@@ -112,6 +112,8 @@ function App() {
           <div className="lovechamber-section-col">
             <LoveMoodboardSection />
             <ZodiacPredictionSection />
+            {/* Love Poll Box: moved below Zodiac Prediction in left column */}
+            <LovePollBox />
           </div>
           <div className="lovechamber-compat-col">
             <div className="main-box centered-mainbox">
@@ -268,9 +270,7 @@ function App() {
             </div>
             {/* Flirty Pickup Lines Feature Box */}
             <PickupLinesBox />
-            {/* Love Poll Box: below Pickup Lines */}
-            <LovePollBox />
-            {/* Confessions Wall Box: below Love Poll */}
+            {/* Confessions Wall Box: below Pickup Lines */}
             <ConfessionsWallBox />
             {/* Love Dare of the Day Card: below Confessions Wall */}
             <LoveDareBox />

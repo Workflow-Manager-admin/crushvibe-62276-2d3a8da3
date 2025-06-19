@@ -103,7 +103,7 @@ body {
   width: 34vw;
   display: flex;
   flex-direction: column;
-  gap: 38px;
+  gap: 36px; /* slightly reduce for more balanced stacking now that LovePollBox is in left column */
   align-items: stretch;
   padding-left: 22px;
   padding-right: 22px;
