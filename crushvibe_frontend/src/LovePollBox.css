@@ -113,6 +113,36 @@
   cursor: pointer;
   transition: background 0.17s, color 0.13s, box-shadow .14s;
 }
+/* Pastel/heart-themed reset button below poll/results */
+.love-poll-reset-btn {
+  margin-top: 13px;
+  margin-bottom: 2px;
+  background: linear-gradient(93deg, #ffe4e1 54%, #ffd1dc 99%);
+  color: #e06db1;
+  border: none;
+  border-radius: 2em;
+  padding: 8px 26px 8px 16px;
+  font-family: "Baloo 2", "Pacifico", cursive, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  box-shadow: 0 1.2px 9px #ffd1dc1c;
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  transition: background 0.14s, color 0.12s, box-shadow .13s, transform .09s;
+  letter-spacing: .01em;
+}
+.love-poll-reset-btn:active, .love-poll-reset-btn:focus {
+  background: #ffd1dc;
+  color: #ca86af;
+  box-shadow: 0 2px 15px #e0bbe433, 0 0 9px #ffd1dc54;
+  outline: none;
+  transform: scale(0.98);
+}
+.love-poll-reset-btn[disabled] {
+  opacity: 0.67;
+  pointer-events: none;
+}
 .love-poll-submit-btn:active,
 .love-poll-submit-btn:focus {
   background: #ffe4e1;

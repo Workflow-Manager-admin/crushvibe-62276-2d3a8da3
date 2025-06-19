@@ -251,12 +251,40 @@ function LovePollBox() {
           >
             <span role="img" aria-label="heart">💖</span> Vote!
           </button>
+          {/* Reset button for when user has made a selection before voting */}
+          <button
+            type="button"
+            className="love-poll-reset-btn"
+            onClick={() => setSelected("")}
+            disabled={animating || !selected}
+            style={{ marginTop: 11 }}
+          >
+            <span role="img" aria-label="reset" style={{marginRight: 7}}>🔄</span>
+            Reset Choice
+          </button>
         </form>
       ) : (
-        <div className="love-poll-thanks-text" tabIndex={0} aria-live="polite">
-          <span role="img" aria-label="thank you" style={{ fontSize: 20, marginRight: 8 }}>🥰</span>
-          Thanks for voting! Here’s what everyone loves most:
-        </div>
+        <>
+          <div className="love-poll-thanks-text" tabIndex={0} aria-live="polite">
+            <span role="img" aria-label="thank you" style={{ fontSize: 20, marginRight: 8 }}>🥰</span>
+            Thanks for voting! Here’s what everyone loves most:
+          </div>
+          {/* Reset button for after voting */}
+          <button
+            type="button"
+            className="love-poll-reset-btn"
+            onClick={() => {
+              setSelected("");
+              setHasVoted(false);
+              localStorage.removeItem("lovechamber-love-poll-voted");
+            }}
+            style={{ margin: "7px auto 0 auto", display: "block" }}
+            aria-label="Reset your vote"
+          >
+            <span role="img" aria-label="reset" style={{marginRight: 7}}>🔄</span>
+            Reset & Vote Again
+          </button>
+        </>
       )}
       {/* Results bar chart, always visible for live updating */}
       <div className="love-poll-results-wrap">
@@ -273,7 +301,6 @@ function LovePollBox() {
           }, idx)
         )}
       </div>
-      {/* <button onClick={resetPoll}>[reset poll for dev]</button> */}
     </section>
   );
 }
