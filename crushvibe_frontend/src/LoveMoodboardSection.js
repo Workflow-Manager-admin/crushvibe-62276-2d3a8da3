@@ -39,25 +39,33 @@ function LoveMoodboardSection() {
 
   // Initially, grid order is sequential. 
   // You can display either all or a fixed number per row/column.
+  // Show exactly 4 images at a time, initially chosen randomly.
   const imageCount = MOODBOARD_IMAGES.length;
-  const [indices, setIndices] = useState(Array.from({ length: imageCount }, (_, i) => i));
-  const [shuffleAnim, setShuffleAnim] = useState(false);
 
-  // PUBLIC_INTERFACE
-  function shuffleMoodboard() {
-    const arr = [...indices];
+  // Utility function to pick 4 unique random indices from all available images
+  function getRandomFourIndices() {
+    const arr = Array.from({ length: imageCount }, (_, i) => i);
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
+    return arr.slice(0, 4);
+  }
+
+  // Indices of images to show
+  const [indices, setIndices] = useState(getRandomFourIndices());
+  const [shuffleAnim, setShuffleAnim] = useState(false);
+
+  // PUBLIC_INTERFACE
+  function shuffleMoodboard() {
     setShuffleAnim(true);
     setTimeout(() => {
-      setIndices(arr);
+      setIndices(getRandomFourIndices());
       setShuffleAnim(false);
     }, 285);
   }
 
-  // Display all images dynamically in a grid
+  // Only 4 images, always displayed in a single "row" grid (2x2, 1x4, or 4x1 if mobile)
   return (
     <section className="love-moodboard-box">
       <div className="love-moodboard-title" style={{ fontFamily: "'Pacifico', cursive" }}>
@@ -67,14 +75,14 @@ function LoveMoodboardSection() {
         className={`moodboard-grid${shuffleAnim ? " moodboard-grid-animate" : ""}`}
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gridAutoRows: "110px",
-          gap: "15px 12px",
+          gridTemplateColumns: "repeat(2, 1fr)",
+          gridTemplateRows: "repeat(2, 1fr)",
+          gap: "19px 16px",
           justifyItems: "center",
           alignItems: "center",
           margin: "0 auto",
           padding: 0,
-          maxWidth: 500,
+          maxWidth: 350,
         }}
       >
         {indices.map((imgIdx, i) => (
