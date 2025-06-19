@@ -2,113 +2,116 @@ import React, { useState } from "react";
 import "./LoveMoodboardSection.css";
 
 /*
- * List of uploaded user images, moved to the assets folder. 
- * You must ensure these files are available inside 'assets' directory at build/runtime.
+ * LoveMoodboardSection
+ * Displays a playful grid of animated, randomly chosen emojis.
+ * Provides a Shuffle button to randomly refresh the emoji grid.
  */
 // PUBLIC_INTERFACE
 function LoveMoodboardSection() {
-  /** Main pastel dreamy moodboard grid for LOVE CHAMBER left column. */
-
-  // Only use the provided user-uploaded images, stored in public/assets.
-  // NOTE: The image paths below match exactly what exists in the public/assets folder.
-  const MOODBOARD_IMAGES = [
-    "/assets/20250619_070641_Screenshot_2025-06-19_122649.png",
-    "/assets/20250619_070642_Screenshot_2025-06-19_122700.png",
-    "/assets/20250619_070643_Screenshot_2025-06-19_122712.png",
-    "/assets/20250619_070644_Screenshot_2025-06-19_122728.png",
-    "/assets/20250619_070645_Screenshot_2025-06-19_122852.png",
-    "/assets/20250619_070646_Screenshot_2025-06-19_122905.png",
-    "/assets/20250619_070646_Screenshot_2025-06-19_122940.png",
-    "/assets/20250619_070647_Screenshot_2025-06-19_123046.png",
-    "/assets/20250619_070648_Screenshot_2025-06-19_123152.png",
-    "/assets/20250619_070648_Screenshot_2025-06-19_123200.png",
-    "/assets/20250619_070649_Screenshot_2025-06-19_123230.png",
-    "/assets/20250619_070650_Screenshot_2025-06-19_123321.png",
-    "/assets/20250619_070650_Screenshot_2025-06-19_123328.png",
-    "/assets/20250619_070651_Screenshot_2025-06-19_123343.png",
-    "/assets/20250619_070651_Screenshot_2025-06-19_123348.png",
-    "/assets/20250619_070652_Screenshot_2025-06-19_123355.png",
-    "/assets/20250619_070652_Screenshot_2025-06-19_123515.png",
-    "/assets/20250619_070653_Screenshot_2025-06-19_123524.png",
-    "/assets/20250619_070653_Screenshot_2025-06-19_123530.png",
-    "/assets/20250619_070654_Screenshot_2025-06-19_123538.png",
-    "/assets/20250619_070655_Screenshot_2025-06-19_123547.png",
-    "/assets/20250619_070655_Screenshot_2025-06-19_123555.png",
-    "/assets/20250619_070655_Screenshot_2025-06-19_123607.png",
-    "/assets/20250619_070656_Screenshot_2025-06-19_123612.png",
+  // Array of playful, love/cute/soft themed emoji (hearts, sparkles, sweets, faces, animals)
+  const EMOJI_POOL = [
+    "💖", "💗", "💞", "💘", "💝", "💕", "🦋", "✨", "🌸", "🍰",
+    "🍓", "🧸", "🐻", "❤️", "🩷", "😚", "😳", "😊", "🥰", "😻",
+    "💐", "🎀", "🩵", "💜", "💛", "🌈", "🎉", "💌", "🦄", "🌺",
+    "💓", "🤍", "👩‍❤️‍👨", "😇", "💃", "👑", "🍭", "🎂", "📸", "🎆",
+    "😽", "🥳", "😋", "⭐", "🫦", "🍦", "🎶", "🪽", "💬", "🌷"
   ];
 
-  // Initially, grid order is sequential. 
-  // You can display either all or a fixed number per row/column.
-  // Show exactly 4 images at a time, initially chosen randomly.
-  const imageCount = MOODBOARD_IMAGES.length;
+  const GRID_SIZE = 4; // 2x2 grid
 
-  // Utility function to pick 4 unique random indices from all available images
-  function getRandomFourIndices() {
-    const arr = Array.from({ length: imageCount }, (_, i) => i);
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
+  // Utility: get n unique (or repeated if pool small) random emojis
+  function getRandomEmojis(count) {
+    let pool = [...EMOJI_POOL];
+    let arr = [];
+    for (let i = 0; i < count; i++) {
+      if (pool.length === 0) pool = [...EMOJI_POOL];
+      const idx = Math.floor(Math.random() * pool.length);
+      arr.push(pool.splice(idx, 1)[0]);
     }
-    return arr.slice(0, 4);
+    return arr;
   }
 
-  // Indices of images to show
-  const [indices, setIndices] = useState(getRandomFourIndices());
-  const [shuffleAnim, setShuffleAnim] = useState(false);
+  // Indices of emojis to show
+  const [emojis, setEmojis] = useState(() => getRandomEmojis(GRID_SIZE * GRID_SIZE));
+  const [animState, setAnimState] = useState(false);
 
   // PUBLIC_INTERFACE
   function shuffleMoodboard() {
-    setShuffleAnim(true);
+    setAnimState(true);
     setTimeout(() => {
-      setIndices(getRandomFourIndices());
-      setShuffleAnim(false);
-    }, 285);
+      setEmojis(getRandomEmojis(GRID_SIZE * GRID_SIZE));
+      setAnimState(false);
+    }, 280);
   }
 
-  // Only 4 images, always displayed in a single "row" grid (2x2, 1x4, or 4x1 if mobile)
+  // Animated class helper: subtle bounce & fun
+  const animClass = animState ? "moodboard-grid-animate" : "";
+
+  // Animation/decoration for each emoji (pulse, tilt, rotate for variety)
+  const getEmojiAnimClass = i => {
+    const mod = i % 4;
+    return "moodboard-emoji " +
+      (mod === 0 ? "emoji-bounce" :
+       mod === 1 ? "emoji-tilt" :
+       mod === 2 ? "emoji-pop" : "emoji-spin");
+  };
+
   return (
     <section className="love-moodboard-box">
       <div className="love-moodboard-title" style={{ fontFamily: "'Pacifico', cursive" }}>
         Love Moodboard
       </div>
       <div
-        className={`moodboard-grid${shuffleAnim ? " moodboard-grid-animate" : ""}`}
+        className={`moodboard-grid ${animClass}`}
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(2, 1fr)",
           gridTemplateRows: "repeat(2, 1fr)",
-          gap: "19px 16px",
+          gap: "11px 7px",
           justifyItems: "center",
           alignItems: "center",
           margin: "0 auto",
           padding: 0,
-          maxWidth: 350,
+          maxWidth: 340,
         }}
       >
-        {indices.map((imgIdx, i) => (
+        {emojis.map((emoji, i) => (
           <div
-            className="moodboard-img-wrap"
-            key={MOODBOARD_IMAGES[imgIdx]}
+            className="moodboard-emoji-wrap"
+            key={i + ":" + emoji}
             style={{
-              animationDelay: `${i * 30}ms`
+              aspectRatio: "1/1",
+              width: "100%",
+              minWidth: 0,
+              minHeight: 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
             }}
           >
-            <img
-              src={MOODBOARD_IMAGES[imgIdx]}
-              alt={`Moodboard item ${imgIdx + 1}`}
-              className="moodboard-img"
-              loading="lazy"
-              draggable={false}
+            <span
+              className={getEmojiAnimClass(i) + (animState ? " emoji-grid-fade" : "")}
+              aria-label="decorative emoji"
+              tabIndex={-1}
               style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                aspectRatio: "1/1",
-                borderRadius: 16,
-                background: "#f6f6fa"
+                fontSize: "3.5rem",
+                userSelect: "none",
+                pointerEvents: "none",
+                filter: "drop-shadow(0 1.2px 11px #ffd1dc) drop-shadow(0 0.8px 6px #e0bbe4aa)",
+                borderRadius: "18px",
+                background: "rgba(255,244,250,0.08)",
+                transition: "transform 0.23s",
+                margin: "0 auto",
+                display: "inline-flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "90%",
+                height: "90%",
+                willChange: "transform"
               }}
-            />
+            >
+              {emoji}
+            </span>
           </div>
         ))}
       </div>
@@ -118,7 +121,7 @@ function LoveMoodboardSection() {
         onClick={shuffleMoodboard}
         aria-label="Shuffle Moodboard"
       >
-        <span role="img" aria-label="shuffle" style={{ fontSize: 18, marginRight: 7 }}>🔄</span>
+        <span role="img" aria-label="shuffle" style={{ fontSize: 20, marginRight: 8 }}>🔄</span>
         Shuffle Moodboard
       </button>
     </section>

@@ -31,79 +31,113 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 19px 16px;
-  margin-bottom: 18px;
+  gap: 12px 8px;
+  margin-bottom: 11px;
   margin-left: 0;
   margin-right: 0;
-  max-width: 355px;
+  max-width: 340px;
+  width: 100%;
   opacity: 1;
-  transition: opacity 0.23s;
+  transition: opacity 0.22s;
 }
 
-.moodboard-grid-animate {
-  opacity: 0.33;
+.moodboard-grid-animate,
+.moodboard-grid .emoji-grid-fade {
+  opacity: 0.33 !important;
   transition: opacity 0.19s;
 }
 
-.moodboard-img-wrap {
-  border-radius: 13px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 2.5px 15px 0 #e0bbe426;
-  background: #fff4fa23;
-  transition: box-shadow 0.19s, transform 0.12s;
-  cursor: pointer;
-  z-index: 1;
-  /* Ensure all image boxes have square aspect ratio in grid */
+.moodboard-emoji-wrap {
+  border-radius: 15px;
   aspect-ratio: 1/1;
   width: 100%;
-  max-width: 100%;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   min-width: 0;
   min-height: 0;
-  display: flex;
-  align-items: stretch;
-  justify-content: stretch;
+  transition: box-shadow 0.15s, background 0.13s;
 }
 
-.moodboard-img-wrap:hover,
-.moodboard-img-wrap:focus-within {
-  box-shadow: 0 0 16px 0 #ffd1dc, 0 1.2px 22px #e0bbe4;
-  transform: scale(1.045) rotate(-1.2deg);
-}
-
-.moodboard-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  object-position: center 50%;
-  pointer-events: none;
+.moodboard-emoji {
+  display: inline-block;
+  font-size: 3.5rem;
+  padding: 0.11em 0.08em 0.05em 0.13em;
+  background: none;
   user-select: none;
-  transition: filter 0.21s;
-  filter: brightness(103%) blur(0.1px) saturate(1.13);
-  border-radius: 16px;
+  border-radius: 18px;
+  transition: transform 0.16s, filter 0.18s, opacity 0.15s;
+  margin: 0 auto;
+  text-align: center;
+  will-change: transform, filter;
+  filter: drop-shadow(0 1.2px 11px #ffd1dc) drop-shadow(0 0.8px 6px #e0bbe4aa);
+  opacity: 1;
+  /* Subtle pop shadow per emoji */
 }
 
-.moodboard-img-wrap:hover .moodboard-img {
-  filter: brightness(108%) saturate(1.22) blur(0px);
+.moodboard-emoji:hover, .moodboard-emoji:focus {
+  transform: scale(1.05) rotate(-1deg) !important;
+  filter: drop-shadow(0 4px 24px #ffd1dc8a) drop-shadow(0 0 14px #ffe4e180);
+  background: #fff4fa33;
+  cursor: pointer;
+  outline: none;
 }
 
+.emoji-bounce {
+  animation: emoji-bounce 1.33s infinite cubic-bezier(.52,1.46,.47,.81) alternate;
+}
+@keyframes emoji-bounce {
+  0%   { transform: scale(1) translateY(0);}
+  55%  { transform: scale(1.09) translateY(-6px);}
+  100% { transform: scale(0.98) translateY(1px);}
+}
+
+.emoji-pop {
+  animation: emoji-pop 1.15s infinite cubic-bezier(.58,1.36,.55,1.16) alternate;
+}
+@keyframes emoji-pop {
+  0%   { transform: scale(0.99) rotate(-7deg);}
+  70%  { transform: scale(1.13) rotate(4deg);}
+  100% { transform: scale(0.98) rotate(-2deg);}
+}
+
+.emoji-tilt {
+  animation: emoji-tilt 1.28s infinite linear alternate;
+}
+@keyframes emoji-tilt {
+  0%   { transform: rotate(-6deg) scale(1);}
+  100% { transform: rotate(9deg) scale(1.03);}
+}
+
+.emoji-spin {
+  animation: emoji-spin 3.65s infinite cubic-bezier(.59,.03,.44,1.05) alternate;
+}
+@keyframes emoji-spin {
+  0%   { transform: rotate(0deg);}
+  13%  { transform: scale(1.09) rotate(30deg);}
+  29%  { transform: scale(1.01) rotate(-13deg);}
+  70%  { transform: scale(1.15) rotate(22deg);}
+  100% { transform: rotate(5deg);}
+}
+
+/* Shuffle button, reused and harmonized */
 .moodboard-shuffle-btn {
   display: block;
   margin: 0 auto;
-  margin-top: 9px;
+  margin-top: 7px;
   padding: 10px 28px 10px 17px;
   background: linear-gradient(93deg, #ffd1dc 70%, #ffe4e1 100%);
   border: none;
   border-radius: 1.4em;
-  font-size: 1.07rem;
+  font-size: 1.09rem;
   color: #e06db1;
   font-family: 'Pacifico', cursive, 'Segoe UI', sans-serif;
   font-weight: 600;
   box-shadow: 0 2px 12px #ffd1dc33;
   cursor: pointer;
-  transition: background 0.18s, transform 0.09s, box-shadow 0.18s;
+  transition: background 0.17s, transform 0.12s, box-shadow 0.18s;
 }
 
 .moodboard-shuffle-btn:hover,
@@ -115,25 +149,20 @@
   outline: none;
 }
 
+/* Make emoji grid fit on mobile & keep visual grid */
 @media (max-width: 700px) {
   .love-moodboard-box {
-    padding: 12px 2vw 12px 2vw;
-    margin-bottom: 13px;
-    margin-top: 5px;
+    padding: 13px 2vw 13px 2vw;
+    margin-bottom: 8px;
+    margin-top: 7px;
   }
   .moodboard-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 8px 5px;
-    max-width: 98vw;
+    gap: 6px 3px;
+    max-width: 88vw;
     min-width: 0;
   }
-  .moodboard-img {
-    height: auto;
-    min-width: 0;
-    min-height: 0;
-    max-width: 100%;
-    max-height: 100%;
+  .moodboard-emoji {
+    font-size: 2.73rem;
   }
 }
 
@@ -142,17 +171,17 @@
     font-size: 1.12rem;
   }
   .love-moodboard-box {
-    margin-top: 8px;
-    padding: 6px 0 6px 0;
+    margin-top: 4px;
+    padding: 4px 0 4px 0;
   }
   .moodboard-grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 4px 2px;
+    gap: 2.5px 1.5px;
     max-width: 99vw;
+    width: 99vw;
   }
-  .moodboard-img {
-    height: auto;
-    width: 100%;
+  .moodboard-emoji {
+    font-size: 2.1rem;
   }
 }
