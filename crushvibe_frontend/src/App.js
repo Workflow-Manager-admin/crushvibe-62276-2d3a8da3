@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './App.css';
 // PUBLIC_INTERFACE
 import FloatingHeartsBackground from './FloatingHeartsBackground';
+import './FloatingHeartsBackground.css';
 import Logo from './Logo';
 import LoveMoodboardSection from './LoveMoodboardSection';
 import "./LoveMoodboardSection.css";

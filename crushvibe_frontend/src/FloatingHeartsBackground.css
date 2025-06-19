@@ -1,0 +1,12 @@
+.floating-hearts-overlay {
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  pointer-events: none !important;
+  z-index: 10000 !important; /* extremely high to overlay all app content */
+  /* Optionally allow pass-through click, no scrollbars */
+  overscroll-behavior: none;
+  background: transparent !important;
+}

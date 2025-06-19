@@ -151,12 +151,12 @@ function FloatingHeartsBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="floating-hearts-bg"
+      className="floating-hearts-bg floating-hearts-overlay"
       style={{
         position: "fixed",
         left: 0,
         top: 0,
-        zIndex: 0,
+        zIndex: 10000, // very high for overlay
         width: "100vw",
         height: "100vh",
         pointerEvents: "none"
