@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Baloo+2:wght@600&display=swap');
+
+/* Card styles */
+.lovedare-box.pastel-love-dare-card {
+  background: linear-gradient(129deg, #ffe4e1 65%, #fffde1 100%, #e0bbe4cc 105%);
+  border-radius: 2.25rem;
+  box-shadow: 0 6px 37px 0 #ffe4e17a, 0 2px 15px 0 #ffd1dc61;
+  padding: 36px 19px 24px 19px;
+  margin-top: 0;
+  margin-bottom: 32px;
+  border: 1.5px solid #e0bbe4c9;
+  min-width: 260px;
+  max-width: 452px;
+  width: 100%;
+  z-index: 2;
+  position: relative;
+  overflow: visible;
+  transition: box-shadow 0.17s, transform 0.13s;
+}
+.lovedare-box.pastel-love-dare-card:hover,
+.lovedare-box.pastel-love-dare-card:focus-within {
+  box-shadow: 0 2.5px 35px 0 #ffd1dc64, 0 4px 15px 0 #e0bbe467;
+  transform: translateY(-2px) scale(1.012);
+}
+
+/* Title with curly font and hearts */
+.lovedare-title-deco {
+  display: flex; align-items: center;
+  gap: 9px;
+  margin-bottom: 16px;
+  user-select: none;
+  justify-content: flex-start;
+}
+.lovedare-title {
+  font-family: "Pacifico", "Baloo 2", cursive, sans-serif;
+  font-size: 1.42rem;
+  color: #e06db1;
+  text-shadow: 0 2px 10px #ffe4e170, .5px .5px #ffd1dc33;
+  font-weight: 700;
+  letter-spacing: .03em;
+  margin-left: 8px;
+  display: flex; align-items: center;
+  gap: 10px;
+}
+.lovedare-curly {
+  font-family: "Pacifico","Baloo 2",cursive,sans-serif;
+  margin-left:6px;
+  font-size: 1.19em;
+  letter-spacing: .04em;
+}
+
+/* Decorative heart/sticker emojis */
+.lovedare-sticker {
+  filter: drop-shadow(0 1.2px 8px #ffd1dc66);
+  opacity: .88;
+}
+
+/* Centered dare text row */
+.lovedare-dare-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin: 0 0 18px 0;
+  position: relative;
+  z-index: 2;
+}
+.lovedare-heartleft, .lovedare-heartright {
+  font-size: 1.44em;
+  filter: drop-shadow(0 0.5px 5px #ffe4e17d);
+  margin-top: 5px;
+  user-select: none;
+  opacity: 0.86;
+}
+.lovedare-heartright { margin-left: 3px; }
+.lovedare-heartleft { margin-right: 4px; }
+
+/* Dare text itself - pop anim on change */
+.lovedare-dare-text {
+  font-family: "Baloo 2", cursive, "Segoe UI",sans-serif;
+  font-size: 1.19rem;
+  color: #a76fb9;
+  font-weight: 700;
+  border-radius: 1.15em;
+  background: #fffefcaa;
+  padding: 15px 19px 14px 19px;
+  box-shadow: 0 1px 9px #ffd1dc1c;
+  text-align: center;
+  min-width: 0;
+  word-break: break-word;
+  letter-spacing: -.01em;
+  line-height: 1.29;
+  transition: box-shadow 0.16s, background 0.14s, color 0.11s;
+  margin: 0 1px;
+  z-index: 4;
+  position: relative;
+}
+.lovedare-pop-anim {
+  animation: lovedare-pop 0.86s cubic-bezier(.39,1.13,.56,1.28);
+}
+@keyframes lovedare-pop {
+  0%   { transform: scale(0.92) rotate(-6deg); opacity: 0.62;}
+  44%  { transform: scale(1.14) rotate(3deg); opacity: 1;}
+  71%  { transform: scale(0.98) rotate(-1deg);}
+  100% { transform: scale(1) rotate(0);}
+}
+
+/* Button row: New dare and checkbox */
+.lovedare-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  justify-content: flex-start;
+  margin: 7px 0 8px 4px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.lovedare-checkbox-wrap {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  font-family: "Baloo 2", cursive, sans-serif;
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: #e06db1;
+  user-select: none;
+  margin-right: 8px;
+}
+.lovedare-checkbox {
+  accent-color: #e0bbe4;
+  width: 1.15em; height: 1.15em;
+  border-radius: 7px;
+  box-shadow: 0 1px 8px #ffd1dc27;
+}
+.lovedare-checkbox-label {
+  display: flex; align-items: center;
+  gap: 4px;
+  font-size: 1.07em;
+  font-family: "Baloo 2", cursive, sans-serif;
+  color: #a876b9;
+  font-weight: 700;
+}
+.lovedare-checkbox-emoji {
+  margin-right: 3px; font-size: 1.18em;
+}
+
+/* New Dare Button */
+.lovedare-new-btn {
+  background: linear-gradient(91deg, #ffd1dc 62%, #ffe4e1 98%);
+  color: #e06db1;
+  border: none;
+  border-radius: 1.52em;
+  font-family: "Pacifico", cursive, "Segoe UI", Arial, sans-serif;
+  font-size: 1.09rem;
+  font-weight: 700;
+  box-shadow: 0 2px 10px #ffd1dc2e;
+  padding: 8px 21px 8px 15px;
+  margin-left: 11px;
+  cursor: pointer;
+  transition: background 0.16s, color 0.11s, box-shadow 0.13s, transform .11s;
+  outline: none;
+}
+.lovedare-new-btn:active, .lovedare-new-btn:focus {
+  background: #ffe4e1;
+  color: #ca86af;
+  box-shadow: 0 3px 13px #e0bbe423, 0 0 8px #ffd1dc41;
+  transform: scale(0.98);
+}
+
+/* Cute background decoration hearts/stickers */
+.lovedare-bgdeco {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.deco-heart {
+  position: absolute; user-select: none;
+  opacity: 0.14; font-size: 2.1rem; filter: blur(0.2px);
+}
+.deco-heart.h1 { left: 9%; top: 16%; transform: rotate(-18deg);}
+.deco-heart.h2 { right: 4%; top: 21%; font-size: 2.0rem; opacity: 0.18;}
+.deco-heart.h3 { left: 18%; bottom: 10%; opacity: 0.18;}
+.deco-heart.h4 { right: 13%; bottom: 16%; opacity: 0.12; font-size: 2.3rem;}
+.deco-heart.h5 { left: 39%; top: 57%; font-size: 1.3rem; opacity: 0.15;}
+
+.lovedare-confetti-wrap {
+  position: absolute;
+  left: 0; top: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 8;
+  opacity: 0;
+  transition: opacity .25s;
+  will-change: opacity;
+}
+.lovedare-confetti-wrap.visible { opacity: 1; animation: lovedare-fadeout 1.09s cubic-bezier(.59,0,.12,1.06);}
+@keyframes lovedare-fadeout {
+  0% { opacity: 1; }
+  90% { opacity: 1;}
+  100% { opacity: 0; }
+}
+.lovedare-confetti-piece {
+  position: absolute;
+  width: 10px; height: 20px; border-radius: 13px;
+  background: #ffd1dc;
+  box-shadow: 0 1px 5px #ffd1dc51;
+  opacity: 0.81;
+  left: 50%; top: 45%;
+  transform: translate(-50%,-50%);
+  animation: lovedare-confetti-anim 1s ease-out forwards;
+}
+.lovedare-confetti-piece.t1 { border-radius: 19px 7px 19px 14px; }
+.lovedare-confetti-piece.t2 { border-radius: 15px 15px 7px 18px; }
+.lovedare-confetti-piece.t3 { border-radius: 6px 16px 22px 20px; }
+.lovedare-confetti-piece.t0 { transform: rotate(19deg) scale(.9);}
+@keyframes lovedare-confetti-anim {
+  0%   { opacity: 0.9; }
+  78%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Heart/Sticker overlay for celebration */
+.lovedare-heart-sticker {
+  position: absolute;
+  font-size: 1.3rem;
+  opacity: 0.75;
+  filter: drop-shadow(0 1px 3px #ffd1dc66);
+  z-index: 99;
+  animation: lovedare-sticker-anim 1s cubic-bezier(.43,1,.58,1.13);
+}
+@keyframes lovedare-sticker-anim {
+  0%   { transform: scale(0.83) rotate(-11deg);}
+  30%  { transform: scale(1.19) rotate(8deg);}
+  50%  { transform: scale(1.09) rotate(-5deg);}
+  80%  { transform: scale(1.01) rotate(2deg);}
+  100% { transform: scale(1) rotate(0);}
+}
+
+@media (max-width: 530px) {
+  .lovedare-box.pastel-love-dare-card {
+    min-width: 93vw;
+    max-width: 99vw;
+    padding: 14px 1vw 8px 1vw;
+  }
+  .lovedare-title { font-size: 1.09rem; }
+  .lovedare-dare-text { font-size: 1.01rem; padding: 10px 7vw 10px 7vw;}
+  .lovedare-actions-row { flex-direction: column; gap: 12px;}
+  .lovedare-bgdeco .deco-heart { font-size: 1.39rem;}
+}

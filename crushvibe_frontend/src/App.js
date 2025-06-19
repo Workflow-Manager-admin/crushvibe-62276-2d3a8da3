@@ -15,6 +15,8 @@ import PickupLinesBox from "./PickupLinesBox";
 import LovePollBox from "./LovePollBox";
 import ConfessionsWallBox from "./ConfessionsWallBox";
 import "./ConfessionsWallBox.css";
+import LoveDareBox from "./LoveDareBox";
+import "./LoveDareBox.css";
 
 // PUBLIC_INTERFACE
 function App() {
@@ -270,6 +272,8 @@ function App() {
             <LovePollBox />
             {/* Confessions Wall Box: below Love Poll */}
             <ConfessionsWallBox />
+            {/* Love Dare of the Day Card: below Confessions Wall */}
+            <LoveDareBox />
           </div>
         </div>
       </main>
