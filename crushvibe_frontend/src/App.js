@@ -13,6 +13,8 @@ import SpinTheHeartBox from "./SpinTheHeartBox";
 import "./SpinTheHeartBox.css";
 import PickupLinesBox from "./PickupLinesBox";
 import LovePollBox from "./LovePollBox";
+import GoofyImageBox from "./GoofyImageBox";
+import "./GoofyImageBox.css";
 import ConfessionsWallBox from "./ConfessionsWallBox";
 import "./ConfessionsWallBox.css";
 import LoveDareBox from "./LoveDareBox";
@@ -114,6 +116,8 @@ function App() {
             <ZodiacPredictionSection />
             {/* Love Poll Box: moved below Zodiac Prediction in left column */}
             <LovePollBox />
+            {/* Fun goofy box just below LovePollBox */}
+            <GoofyImageBox />
           </div>
           <div className="lovechamber-compat-col">
             <div className="main-box centered-mainbox">
