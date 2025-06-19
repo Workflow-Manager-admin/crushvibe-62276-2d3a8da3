@@ -125,94 +125,109 @@ function App() {
                 flexDirection: "column",
                 alignItems: "center"
               }}>
-                {/* Decorative heading for compatibility box */}
-                <div
-                  className="compatibility-title-wrap"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "13px",
-                    justifyContent: "center",
-                    width: "100%",
-                    marginBottom: "11px",
-                    marginTop: "0"
-                  }}
-                >
-                  <span
-                    className="compatibility-title"
+                {/* Decorative heading for compatibility box and prompt */}
+                <div className="compatibility-title-heading-wrap" style={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  marginBottom: 19,
+                  marginTop: "-4px"
+                }}>
+                  <div
+                    className="compatibility-title-wrap"
                     style={{
-                      fontFamily: "'Pacifico', 'Baloo 2', cursive, sans-serif",
-                      fontSize: "1.44rem",
-                      color: "#e06db1",
-                      textShadow: "0 2px 10px #ffe4e18d, 0.5px 0.5px #ffd1dc55",
-                      fontWeight: 700,
-                      letterSpacing: ".03em",
-                      marginLeft: "6px",
-                      marginRight: "2px",
                       display: "flex",
                       alignItems: "center",
-                      userSelect: "none"
+                      gap: "13px",
+                      justifyContent: "center",
+                      width: "100%",
+                      marginBottom: "2px",
+                      marginTop: "0"
                     }}
                   >
                     <span
-                      role="img"
-                      aria-label="heart"
+                      className="compatibility-title"
                       style={{
-                        fontSize: 27,
-                        marginRight: 9,
-                        filter: "drop-shadow(0 1.2px 8px #ffd1dc66)",
-                        opacity: .88,
-                        verticalAlign: "middle"
+                        fontFamily: "'Pacifico', 'Baloo 2', cursive, sans-serif",
+                        fontSize: "1.44rem",
+                        color: "#e06db1",
+                        textShadow: "0 2px 10px #ffe4e18d, 0.5px 0.5px #ffd1dc55",
+                        fontWeight: 700,
+                        letterSpacing: ".03em",
+                        marginLeft: "6px",
+                        marginRight: "2px",
+                        display: "flex",
+                        alignItems: "center",
+                        userSelect: "none"
                       }}
                     >
-                      💖
+                      <span
+                        role="img"
+                        aria-label="heart"
+                        style={{
+                          fontSize: 27,
+                          marginRight: 9,
+                          filter: "drop-shadow(0 1.2px 8px #ffd1dc66)",
+                          opacity: .88,
+                          verticalAlign: "middle"
+                        }}
+                      >
+                        💖
+                      </span>
+                      <span
+                        style={{
+                          display: "inline",
+                          fontFamily: "'Pacifico', 'Baloo 2', cursive, sans-serif"
+                        }}
+                      >
+                        Compatibility Match
+                      </span>
                     </span>
                     <span
+                      className="compatibility-title-sticker"
+                      aria-hidden="true"
                       style={{
-                        display: "inline",
-                        fontFamily: "'Pacifico', 'Baloo 2', cursive, sans-serif"
+                        fontSize: 21,
+                        marginLeft: 7,
+                        filter: "drop-shadow(0 0.5px 8px #e0bbe499)",
+                        opacity: 0.80
                       }}
-                    >
-                      Compatibility Match
-                    </span>
-                  </span>
-                  <span
-                    className="compatibility-title-sticker"
-                    aria-hidden="true"
+                    >✨</span>
+                  </div>
+                  <div
+                    className="compatibility-prompt-heading"
                     style={{
-                      fontSize: 21,
-                      marginLeft: 7,
-                      filter: "drop-shadow(0 0.5px 8px #e0bbe499)",
-                      opacity: 0.80
+                      fontFamily: "'Pacifico', 'Baloo 2', cursive, sans-serif",
+                      fontSize: "1.09rem",
+                      color: "#ca86af",
+                      background: "#ffe4e1",
+                      borderRadius: "17px",
+                      boxShadow: "0 1.5px 12px #ffd1dc20",
+                      padding: "8.5px 16px 8.5px 16px",
+                      margin: "0 auto 6px auto",
+                      textAlign: "center",
+                      width: "100%",
+                      letterSpacing: ".01em",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "8px",
+                      userSelect: "none",
+                      maxWidth: "438px",
+                      opacity: 1
                     }}
-                  >✨</span>
-                </div>
-                <div
-                  className="compatibility-prompt"
-                  style={{
-                    marginBottom: 19,
-                    marginTop: -4,
-                    fontSize: "1.07rem",
-                    color: "#a76fb9",
-                    fontFamily: "'Baloo 2', 'Segoe UI', cursive, sans-serif",
-                    opacity: 0.98,
-                    fontWeight: 600,
-                    background: "#fff4fa77",
-                    textAlign: "center",
-                    borderRadius: "18px",
-                    padding: "7.5px 18px 7px 18px",
-                    maxWidth: "420px",
-                    width: "100%",
-                    boxShadow: "0 2px 9px #ffe4e141"
-                  }}
-                >
-                  Enter your name and your crush’s name to unveil your playful fate and get a flirty line!
+                  >
+                    <span role="img" aria-label="stars" style={{fontSize: 19, marginRight: 8, opacity: .82}}>🌸</span>
+                    Enter your name and your crush’s name to unveil your playful fate and get a flirty line!
+                    <span role="img" aria-label="sparkle" style={{fontSize: 19, marginLeft: 8, opacity: .8}}>✨</span>
+                  </div>
                 </div>
                 <form
                   style={{
                     width: "100%",
-                    maxWidth: "410px",
-                    minWidth: "240px",
+                    maxWidth: "100%",
+                    minWidth: "0",
                     display: "flex",
                     flexDirection: "column",
                     gap: 15,

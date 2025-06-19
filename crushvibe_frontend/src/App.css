@@ -30,12 +30,13 @@ body {
   background: linear-gradient(135deg, #ffe4e1 0%, #ffd1dc 84%, #e0bbe4 100%);
   border-radius: var(--box-radius);
   box-shadow: var(--main-box-shadow);
-  min-width: 340px;
-  max-width: 420px;
+  min-width: 420px;
+  max-width: 452px;
   width: 100%;
-  margin: 34px 10px;
+  margin: 18px 0 18px 0; /* tighter spacing for vertical balance */
   border: 2px solid var(--secondary-violet);
   position: relative;
+  padding: 0;
 }
 
 /* Top LOVE CHAMBER header styles */
@@ -90,7 +91,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 54px;
+  gap: 32px;
   max-width: 1440px;
   margin: 0 auto;
   padding-bottom: 18px;
@@ -98,32 +99,34 @@ body {
 
 /* Left column: Moodboard + Zodiac */
 .lovechamber-section-col {
-  min-width: 398px;
-  max-width: 522px;
-  width: 34vw;
+  min-width: 420px;
+  max-width: 452px;
+  width: 452px;
   display: flex;
   flex-direction: column;
-  gap: 36px; /* slightly reduce for more balanced stacking now that LovePollBox is in left column */
+  gap: 28px;
   align-items: stretch;
-  padding-left: 22px;
-  padding-right: 22px;
-  margin-top: 6px;
-  margin-bottom: 14px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
   z-index: 1;
+  box-sizing: border-box;
+  align-items: center;
 }
 
 /* Right column: Compatibility + SpinTheHeart */
 .lovechamber-compat-col {
-  min-width: 424px;
-  max-width: 610px;
-  flex: 1;
-  width: 99vw;
+  min-width: 420px;
+  max-width: 452px;
+  width: 452px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  gap: 36px;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-sizing: border-box;
 }
 
 /* Make main-box and SpinTheHeartBox larger */
@@ -179,20 +182,36 @@ body {
 }
 
 .compatibility-prompt {
-  color: #a76fb9;
-  font-family: "Baloo 2", 'Segoe UI', cursive, sans-serif;
-  background: #fff4fa77;
-  border-radius: 18px;
-  padding: 7.5px 18px 7px 18px;
-  margin-bottom: 14px;
-  margin-top: 0;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.07rem;
-  max-width: 420px;
+  display: none !important;
+}
+
+/* New decorative prompt (heading version) */
+.compatibility-title-heading-wrap {
+  margin-top: 0 !important;
   width: 100%;
-  opacity: 0.98;
-  box-shadow: 0 2px 9px #ffe4e141;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.compatibility-prompt-heading {
+  font-family: "Pacifico", "Baloo 2", cursive, sans-serif;
+  font-size: 1.09rem;
+  color: #ca86af;
+  background: #ffe4e1;
+  border-radius: 17px;
+  box-shadow: 0 1.5px 12px #ffd1dc20;
+  padding: 8.5px 16px 8.5px 16px;
+  margin: 0 auto 6px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 438px;
+  letter-spacing: .01em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  user-select: none;
+  opacity: 1;
 }
 
 /* Make all major boxes the same width/height in columns */
@@ -201,6 +220,10 @@ body {
   max-width: 452px;
   width: 100%;
   box-sizing: border-box;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .dreamy-confession-card,
@@ -213,8 +236,8 @@ body {
   max-width: 452px;
   width: 100%;
   box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* Responsive: below 700px all major boxes are nearly full width and visually aligned */
@@ -233,21 +256,31 @@ body {
   .dreamy-zodiac-box,
   .dreamy-spin-box,
   .pastel-card {
-    min-width: 96vw !important;
+    min-width: 98vw !important;
     max-width: 99vw !important;
     width: 99vw !important;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
     box-sizing: border-box;
-    padding-left: 2vw;
-    padding-right: 2vw;
+    padding-left: 2vw !important;
+    padding-right: 2vw !important;
+  }
+  .lovechamber-section-col, .lovechamber-compat-col {
+    min-width: 97vw;
+    max-width: 99vw;
+    width: 99vw;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
   .compatibility-title {
     font-size: 1.11rem !important;
   }
-  .compatibility-prompt {
-    font-size: 0.95rem !important;
+  .compatibility-prompt-heading {
+    font-size: 0.91rem !important;
     padding: 8px 2vw 8px 2vw !important;
+    max-width: 98vw !important;
   }
 }
 
@@ -352,12 +385,13 @@ body {
   background: linear-gradient(135deg, #ffe4e1 0%, #ffd1dc 84%, #e0bbe4 100%);
   border-radius: var(--box-radius);
   box-shadow: var(--main-box-shadow);
-  min-width: 340px;
-  max-width: 420px;
+  min-width: 420px;
+  max-width: 452px;
   width: 100%;
-  margin: 34px 10px;
+  margin: 18px 0 18px 0; /* tighter spacing for vertical balance */
   border: 2px solid var(--secondary-violet);
   position: relative;
+  padding: 0;
 }
 
 /* Comment out or remove old header rules below. */
