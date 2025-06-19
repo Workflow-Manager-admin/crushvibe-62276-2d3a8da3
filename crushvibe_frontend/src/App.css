@@ -72,8 +72,55 @@ body {
   font-size: 2.19rem;
   color: #e0bbe4;
   letter-spacing: 2.2px;
-  text-shadow: 0px 2.7px 18px #ffe4e1cc, 1px 1px #fff3;
+  text-shadow:
+    0px 2.7px 18px #ffe4e1cc,
+    1px 1px #fff3,
+    0 0 12px #ffd1dcbb,
+    0 0 22px #ffe4e170,
+    0 0 0px #ffd1dc;
   /* decent left margin with logo, text stays visually centered */
+  /* Glowing and dreamy effect */
+  position: relative;
+  animation: lovechamber-glow 2.7s ease-in-out infinite alternate;
+}
+
+@keyframes lovechamber-glow {
+  0% {
+    text-shadow:
+      0px 2.7px 18px #ffe4e1cc,
+      1px 1px #fff3,
+      0 0 12px #ffd1dcbb,
+      0 0 18px #ffe4e170,
+      0 0 0px #ffd1dcc6;
+    filter: brightness(1.01);
+  }
+  39% {
+    text-shadow:
+      0px 2.7px 18px #ffe4e1cc,
+      1px 1px #fff3,
+      0 0 24px #ffd1dc99,
+      0 0 42px #ffe4e1bb,
+      0 0 14px #ffd1dc88;
+    filter: brightness(1.07);
+  }
+  65% {
+    text-shadow:
+      0px 2.7px 20px #ffe4e1dd,
+      1px 2px #fff2,
+      0 0 33px #ffd1dcf0,
+      0 0 54px #ffe4e1d4,
+      0 0 28px #e0bbe4a2;
+    filter: brightness(1.14);
+  }
+  98%, 100% {
+    text-shadow:
+      0px 2.7px 20px #ffe4e1f7,
+      1px 1px #fff7,
+      0 0 44px #ffd1dcf7,
+      0 0 64px #ffe4e1e5,
+      0 0 32px #e0bbe4e3;
+    filter: brightness(1.17);
+  }
 }
 
 .lovechamber-main-content {
