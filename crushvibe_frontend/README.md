@@ -1,98 +1,49 @@
-# Lightweight React Template for KAVIA
+# LOVE CHAMBER - Pastel Playful React App
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+Welcome to **LOVE CHAMBER**! This is a sweet, pastel-themed React SPA that lets you enter your name and your crush’s name to reveal a sassy compatibility verdict and a fun flirty line.
 
 ## Features
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+- **Pastel Aesthetic**: Main palette: `#ffd1dc`, `#e0bbe4`, `#ffe4e1`
+- **Branding**: Custom circular pastel logo and 'LOVE CHAMBER' header in Times New Roman
+- **Modern Layout**: Central rounded main box, visually centered in the viewport
+- **Responsive**: Looks beautiful on desktop and mobile
+- **No frameworks**: All styles crafted in vanilla CSS
+- **Fun!**: Floating pastel hearts background adds a playful touch
 
-## Important Note: Babel Configuration
+## Developer Notes
 
-This project’s `package.json` includes a `babel` section with a plugin:
+- Main colors defined in `src/App.css`:
+    - Primary: `#ffd1dc`
+    - Secondary: `#e0bbe4`
+    - Accent: `#ffe4e1`
+- Brand/logo: Simple SVG-based pastel circle in `src/Logo.js`
+- Centered box with rounded corners (see `.main-box` in CSS)
+- No mention of previous brands ("CrushVibe") remains
 
-```json
-"babel": {
-"plugins": ["./.ve/babel-plugin-jsx-editor-id.js"]
-}
+## Quick Start
+
+```sh
+npm install
+npm start
 ```
 
-This plugin enables **visual editing functionality** in supported tools.
+Runs on [http://localhost:3000](http://localhost:3000)
 
-**Warning for AI code agents and contributors:**
-**DO NOT** remove or modify this section - it is ESSENTIAL for proper operation.
-Removing it will break editor integration and visual editing features.
+## Build
 
-## Getting Started
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-### `npm test`
-
-Launches the test runner in interactive watch mode.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## Customization
-
-### Colors
-
-The main brand colors are defined as CSS variables in `src/App.css`:
-
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
+```sh
+npm run build
 ```
 
-### Components
+Builds for production.
 
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
+## Testing
 
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
+```sh
+npm test
+```
 
 ## Learn More
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This app is built with [ReactJS](https://reactjs.org/). To learn React, check out the [React documentation](https://reactjs.org/).

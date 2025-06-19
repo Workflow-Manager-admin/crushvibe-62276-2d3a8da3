@@ -1,6 +1,8 @@
+
 import React, { useState } from 'react';
 import './App.css';
 import FloatingHeartsBackground from './FloatingHeartsBackground';
+import Logo from './Logo';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -72,49 +74,115 @@ function App() {
   }
 
   return (
-    <div className="app" style={{ position: "relative" }}>
-      {/* Playful floating hearts/stars background */}
+    <div
+      className="app"
+      style={{
+        minHeight: "100vh",
+        width: "100vw",
+        background: "linear-gradient(132deg, #e0bbe4 45%, #ffd1dc 100%)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative"
+      }}
+    >
       <FloatingHeartsBackground />
-      <nav className="navbar">
-        <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-            <div className="logo">
-              <span className="logo-symbol">*</span> CrushVibe
-            </div>
-            <a href="https://kavia.ai" style={{ textDecoration: 'none' }}>
-              <button className="btn">by KAVIA</button>
-            </a>
+      <div
+        className="main-box"
+        style={{
+          background: "linear-gradient(135deg, #ffe4e1 0%, #ffd1dc 84%, #e0bbe4 100%)",
+          borderRadius: "2.1rem",
+          boxShadow: "0 7px 36px 0 rgba(224, 187, 228, 0.13)",
+          minWidth: 340,
+          maxWidth: 420,
+          width: "100%",
+          padding: "0 0 38px 0",
+          margin: "34px 10px",
+          border: "2px solid #e0bbe4",
+          position: "relative"
+        }}
+      >
+        {/* Header */}
+        <header
+          style={{
+            display: "flex",
+            alignItems: "center",
+            height: "78px",
+            borderTopLeftRadius: "2.1rem",
+            borderTopRightRadius: "2.1rem",
+            background: "linear-gradient(90deg, #ffd1dc 60%, #e0bbe4 100%)",
+            borderBottom: "1.3px solid #e0bbe4",
+            boxShadow: "none"
+          }}
+        >
+          <div style={{ marginLeft: 15, marginRight: 8 }}>
+            <Logo size={51} />
           </div>
-        </div>
-      </nav>
-      <main>
-        <div className="container">
-          <div className="hero" style={{paddingTop: '150px', maxWidth: 450, margin: '0 auto'}}>
-            <div className="title" style={{
-              marginBottom: 8,
-              fontSize: '2.8rem',
-              color: 'var(--base-light)',
-              letterSpacing: 1
-            }}>
-              💖 CrushVibe
-            </div>
-            <div className="description" style={{marginBottom: 32, color: 'var(--text-secondary)'}}>
+          <div style={{
+            display: "flex",
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center"
+          }}>
+            <span
+              style={{
+                fontFamily: "'Times New Roman', Times, serif",
+                fontWeight: 700,
+                fontSize: "2.0rem",
+                color: "#e0bbe4",
+                letterSpacing: "1.8px",
+                textShadow: "0px 2px 8px #ffe4e18a, 0.5px 0.5px #fff1",
+                marginRight: 57,
+                marginLeft: 0,
+              }}
+              children="LOVE CHAMBER"
+            />
+          </div>
+        </header>
+
+        <main>
+          <div className="hero" style={{
+            paddingTop: "35px",
+            maxWidth: "95%",
+            margin: "0 auto",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center"
+          }}>
+            <div
+              className="subtitle"
+              style={{
+                marginBottom: 16,
+                marginTop: 8,
+                fontSize: "1.16rem",
+                color: "#ca86af",
+                fontFamily: "'Segoe UI', 'Helvetica Neue', Arial, sans-serif",
+                opacity: 0.91,
+                fontWeight: 500,
+                textAlign: "center",
+              }}
+            >
+              {/* Tagline */}
               Enter your name and your crush’s name to unveil your playful fate and get a flirty line!
             </div>
             <form
-              style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 18 }}
+              style={{ width: "94%", display: "flex", flexDirection: "column", gap: 18, alignItems: "center" }}
               onSubmit={e => { e.preventDefault(); handleGenerate(); }}
               autoComplete="off"
             >
               <input
                 className="container"
                 style={{
-                  padding: '12px 18px',
-                  borderRadius: 10,
-                  border: '1px solid var(--border-color)',
+                  padding: '13px 19px',
+                  borderRadius: 12,
+                  border: '1.5px solid #e0bbe4',
                   fontSize: 18,
-                  background: 'rgba(255,255,255,0.04)',
-                  color: 'var(--text-color)'
+                  fontFamily: "'Segoe UI', 'Roboto', Arial, sans-serif",
+                  background: 'rgba(255,255,255,0.13)',
+                  color: '#aa70a9',
+                  outline: "none",
+                  marginBottom: -1,
+                  width: "100%",
                 }}
                 name="yourName"
                 placeholder="Your Name"
@@ -127,12 +195,15 @@ function App() {
               <input
                 className="container"
                 style={{
-                  padding: '12px 18px',
-                  borderRadius: 10,
-                  border: '1px solid var(--border-color)',
+                  padding: '13px 19px',
+                  borderRadius: 12,
+                  border: '1.5px solid #e0bbe4',
                   fontSize: 18,
-                  background: 'rgba(255,255,255,0.04)',
-                  color: 'var(--text-color)'
+                  fontFamily: "'Segoe UI', 'Roboto', Arial, sans-serif",
+                  background: 'rgba(255,255,255,0.14)',
+                  color: '#aa70a9',
+                  outline: "none",
+                  width: "100%",
                 }}
                 name="crushName"
                 placeholder="Crush's Name"
@@ -145,14 +216,29 @@ function App() {
                 <button
                   type="submit"
                   className="btn btn-large"
-                  style={{ minWidth: 120, fontWeight: 600 }}
+                  style={{
+                    minWidth: 120,
+                    fontWeight: 600,
+                    background: "linear-gradient(93deg, #ffe4e1 55%, #ffd1dc 100%)",
+                    color: "#e06db1",
+                    border: "none",
+                    borderRadius: 20,
+                    fontSize: "1.16rem",
+                    boxShadow: "0 2px 12px 0 #ffd1dc33"
+                  }}
                 >
                   Generate Flirty Line
                 </button>
                 <button
                   type="button"
                   className="btn btn-large"
-                  style={{ background: 'var(--border-color)', color: '#fff', minWidth: 90 }}
+                  style={{
+                    background: "#e0bbe4",
+                    color: "#fff",
+                    minWidth: 90,
+                    borderRadius: 20,
+                    fontWeight: 500
+                  }}
                   onClick={handleReset}
                 >
                   Reset
@@ -163,13 +249,14 @@ function App() {
               <div
                 style={{
                   marginTop: 32,
-                  width: '100%',
+                  width: '95%',
                   padding: showResult ? '28px 20px 18px' : '18px 20px 10px',
                   borderRadius: 18,
-                  background: 'rgba(0,255,255,0.06)',
-                  boxShadow: '0 3px 16px 0 rgba(0,0,0,0.11)',
+                  background: '#ffe4e1ee',
+                  boxShadow: '0 2px 10px 0 #e0bbe44d',
                   textAlign: 'center',
-                  minHeight: 60
+                  minHeight: 60,
+                  border: "1px solid #ffd1dc"
                 }}
               >
                 {verdict && (
@@ -177,7 +264,7 @@ function App() {
                     fontSize: 20,
                     fontWeight: 500,
                     marginBottom: showResult && flirtyLine ? 11 : 0,
-                    color: verdict.startsWith('💔') ? '#ffd1dc' : 'var(--base-light)',
+                    color: verdict.startsWith('💔') ? '#e06db1' : '#ca86af',
                   }}>
                     {verdict}
                   </div>
@@ -186,13 +273,13 @@ function App() {
                   <div style={{
                     fontSize: 18,
                     marginTop: 5,
-                    color: 'var(--text-color)',
-                    opacity: 0.93
+                    color: '#a76fb9',
+                    opacity: 0.97
                   }}>
                     <span style={{ fontWeight: 400 }}>Flirty Line: </span>
                     <span style={{
                       fontWeight: 600,
-                      color: '#ffd1dc'
+                      color: '#ff77a9'
                     }}>
                       {flirtyLine}
                     </span>
@@ -201,8 +288,8 @@ function App() {
               </div>
             )}
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   );
 }
