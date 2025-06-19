@@ -17,21 +17,15 @@ function LoveMoodboardSection() {
     "😽", "🥳", "😋", "⭐", "🫦", "🍦", "🎶", "🪽", "💬", "🌷"
   ];
 
-  const GRID_SIZE = 4; // 2x2 grid
+  const GRID_SIZE = 2; // 2x2 grid (only 4 emojis total)
 
-  // Utility: get n unique (or repeated if pool small) random emojis
+  // Utility: get n unique random emojis (no repeats in a batch)
   function getRandomEmojis(count) {
-    let pool = [...EMOJI_POOL];
-    let arr = [];
-    for (let i = 0; i < count; i++) {
-      if (pool.length === 0) pool = [...EMOJI_POOL];
-      const idx = Math.floor(Math.random() * pool.length);
-      arr.push(pool.splice(idx, 1)[0]);
-    }
-    return arr;
+    const shuffled = [...EMOJI_POOL].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
   }
 
-  // Indices of emojis to show
+  // Show 4 unique emojis
   const [emojis, setEmojis] = useState(() => getRandomEmojis(GRID_SIZE * GRID_SIZE));
   const [animState, setAnimState] = useState(false);
 
