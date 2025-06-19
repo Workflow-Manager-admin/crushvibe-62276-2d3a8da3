@@ -6,6 +6,8 @@ import FloatingHeartsBackground from './FloatingHeartsBackground';
 import Logo from './Logo';
 import LoveMoodboardSection from './LoveMoodboardSection';
 import "./LoveMoodboardSection.css"; // Import CSS for LoveMoodboardSection
+import ZodiacPredictionSection from "./ZodiacPredictionSection";
+import "./ZodiacPredictionSection.css";
 
 // PUBLIC_INTERFACE
 function App() {
@@ -160,11 +162,8 @@ function App() {
           </header>
           {/* 1: Love Moodboard Box */}
           <LoveMoodboardSection />
-          {/* 2: Zodiac Prediction Section - placeholder for stacking */}
-          <div style={{ height: 88, borderRadius: "1.4rem", background: "#ffd1dc66", marginBottom: 23, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#e0bbe4', fontWeight: 500, fontSize: "1.07rem", opacity: 0.65 }}>
-            {/* Placeholder for Zodiac Prediction */}
-            (Zodiac Prediction coming soon)
-          </div>
+          {/* 2: Zodiac Prediction Section */}
+          <ZodiacPredictionSection />
           {/* 3: Spin the Heart Game - placeholder for stacking */}
           <div style={{ height: 88, borderRadius: "1.4rem", background: "#e0bbe433", display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ca86af', fontWeight: 500, fontSize: "1.07rem", opacity: 0.6 }}>
             (Spin the Heart Game coming soon)

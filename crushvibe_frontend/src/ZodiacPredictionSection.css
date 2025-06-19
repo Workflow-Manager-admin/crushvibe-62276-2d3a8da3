@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.zodiac-box.dreamy-zodiac-box {
+  background: linear-gradient(135deg, #e0bbe4 14%, #ffd1dc 82%, #fffde1 100%);
+  border-radius: 1.35rem;
+  box-shadow: 0 5px 24px 0 #e0bbe471, 0 0 32px 2px #ffd1dc36;
+  padding: 20px 18px 17px 18px;
+  margin-bottom: 28px;
+  min-height: 210px;
+  border: 1.2px solid #e0bbe4;
+  position: relative;
+  z-index: 3;
+  overflow: visible;
+}
+
+.zodiac-title {
+  font-size: 1.35rem;
+  color: #b584e9;
+  margin-bottom: 6px;
+  text-align: center;
+  letter-spacing: .01em;
+  text-shadow: 0 2px 10px #ffe4e18d, 0.5px 0.5px #fff2;
+  font-family: "Pacifico", cursive;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.zodiac-dropdown {
+  font-family: 'Pacifico', 'Segoe UI', cursive, Arial, sans-serif;
+  background: linear-gradient(90deg, #ffe4e1 65%, #ffd1dc 100%);
+  color: #a775db;
+  border-radius: 10px;
+  padding: 5px 11px 6px 10px;
+  font-size: 1.11rem;
+  border: 1.15px solid #e0bbe481;
+  outline: none;
+  box-shadow: 0 1px 7px #ffd1dc26;
+  margin-left: 5px;
+  transition: border 0.15s, box-shadow 0.17s;
+}
+.zodiac-dropdown:focus {
+  border: 1.25px solid #ffd1dc;
+  background: #fff7fd;
+  box-shadow: 0 1px 12px #fde4ea4d;
+}
+
+.horoscope-heart {
+  margin: 0 auto;
+  margin-top: 7px;
+  width: 202px;
+  min-height: 100px;
+  height: auto;
+  max-width: 97%;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  filter: drop-shadow(0 0 6px #ffe4e18a) drop-shadow(0 1px 14px #e0bbe4b4);
+  transition: filter .13s cubic-bezier(.58,.04,.96,1.19);
+}
+.horoscope-heart-animate {
+  animation: heart-pop-glow 0.88s cubic-bezier(.41,.92,.63,1.43);
+  /* Pulse shadow for main pop */
+}
+@keyframes heart-pop-glow {
+  0% {
+    transform: scale(0.89) rotate(-8deg);
+    filter: drop-shadow(0 0 3px #ca86af7d);
+    opacity: 0.7;
+  }
+  54% {
+    transform: scale(1.18) rotate(2deg);
+    filter: drop-shadow(0 0 44px #fffde1aa)
+            drop-shadow(0 2px 22px #b584e9c0);
+    opacity: 1;
+  }
+  88% {
+    transform: scale(0.97) rotate(-1deg);
+    filter: drop-shadow(0 0 14px #ffd1dcd0) drop-shadow(0 1px 9px #e0bbe47a);
+  }
+  100% {
+    transform: scale(1.00) rotate(0deg);
+    filter: drop-shadow(0 0 8px #ffe4e181) drop-shadow(0 1px 16px #ffd1dc70);
+    opacity: 1;
+  }
+}
+
+.horoscope-heart-inner {
+  width: 100%;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Custom heart shape with pastel gradients */
+  background:
+    radial-gradient(circle, #fffde1cc 0%, #ffd1dc33 76%, #e0bbe411 100%);
+  position: relative;
+  z-index: 2;
+}
+.horoscope-heart::before,
+.horoscope-heart-inner::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+}
+.horoscope-heart::before {
+  left: 50%;
+  top: 36px;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 112px;
+  background: none;
+  z-index: 0;
+  /* Draw the heart shape using box-shadow for glow, then mask with SVG using clip-path */
+  clip-path: path('M 71 38 C 71 13, 113 13, 113 38 C 113 65, 71 85, 71 110 C 71 85, 29 65, 29 38 C 29 13, 71 13, 71 38 Z');
+  /* fallback for heartbeat: a massive pastel glow */
+  box-shadow: 0 4px 44px 5px #ffe4e1bb, 0 0 27px 5px #ffe6ff55, 0 0 55px 15px #e0bbe480;
+  opacity: 0.77;
+}
+.horoscope-heart-inner::after {
+  left: 50%;
+  top: -12px;
+  transform: translateX(-50%);
+  width: 158px;
+  height: 124px;
+  z-index: 1;
+  background: none;
+}
+
+.horoscope-heart-inner {
+  position: relative;
+  padding: 35px 25px 24px 25px;
+  border-radius: 55% 55% 52% 52%/56% 56% 80% 80%;
+  background: linear-gradient(127deg, #ffe4e1 70%, #ffd1dc 100%, #e0bbe4 112%);
+  box-shadow: 0 5px 48px #fffbe176, 0 2px 18px #e0bbe433;
+  border: 2.2px solid #ffe4e1c4;
+  /* Heart shape via border-radius */
+  filter: drop-shadow(0 0 16px #ffe4e19c) drop-shadow(0 0px 17px #e0bbe475);
+}
+
+.horoscope-text {
+  display: block;
+  margin-top: 7px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #fffde9;
+  text-shadow: 0 2px 8px #ffe4e1c2, 0.5px 0.5px #e0bbe470;
+}
+
+.twinkle-stars-svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 20;
+  width: 120px;
+  height: 60px;
+  animation: none;
+  opacity: 0.92;
+}
+
+.twinkle-stars-svg-animate .ts1 {
+  animation: twinkle1 1.10s infinite alternate;
+}
+.twinkle-stars-svg-animate .ts2 {
+  animation: twinkle2 1.33s infinite alternate;
+}
+.twinkle-stars-svg-animate .ts3 {
+  animation: twinkle3 1.42s infinite alternate;
+}
+.twinkle-stars-svg-animate .ts4 {
+  animation: twinkle4 1.67s infinite alternate;
+}
+.twinkle-stars-svg-animate .ts5 {
+  animation: twinkle5 2.15s infinite alternate;
+}
+
+@keyframes twinkle1 { from { opacity: 0.8; } to { opacity: 0.35; transform: scale(1.05) rotate(-4deg); } }
+@keyframes twinkle2 { from { opacity: 0.9; } to { opacity: 0.43; transform: scale(0.93) rotate(3deg); } }
+@keyframes twinkle3 { from { opacity: 0.83;} to { opacity: 0.5;  transform: scale(0.96) rotate(-6deg);} }
+@keyframes twinkle4 { from { opacity: 0.82;} to { opacity: 0.36; transform: scale(1.12) rotate(2deg);} }
+@keyframes twinkle5 { from { opacity: 0.58;} to { opacity: 0.25; transform: scale(1.14) rotate(-2deg);} }
+
+@media (max-width: 600px) {
+  .zodiac-box.dreamy-zodiac-box {
+    padding: 12px 4vw 7px 4vw;
+    min-height: 151px;
+  }
+  .horoscope-heart {
+    width: 90vw;
+    max-width: 97vw;
+    min-width: 170px;
+  }
+  .horoscope-heart-inner {
+    padding: 15vw 3vw 8vw 3vw;
+    min-height: 80px;
+    font-size: 0.93rem;
+  }
+}
